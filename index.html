@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bungou Stray Dogs - Page 0</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&amp;family=Rajdhani:wght@300;400;600;700&amp;family=Special+Elite&amp;display=swap" rel="stylesheet">
+  <style>
+    @keyframes glitchText {
+      0%, 100% { transform: translate(0); opacity: 1; }
+      10% { transform: translate(-3px, 2px); opacity: 0.8; }
+      20% { transform: translate(3px, -1px); opacity: 1; }
+      30% { transform: translate(0); }
+      40% { transform: translate(-2px, -2px); opacity: 0.9; }
+      50% { transform: translate(2px, 1px); opacity: 1; }
+      60% { transform: translate(0); }
+    }
+    @keyframes glitchLayer1 {
+      0%, 100% { clip-path: inset(0 0 100% 0); }
+      5% { clip-path: inset(20% 0 60% 0); transform: translate(-4px, 0); }
+      10% { clip-path: inset(50% 0 30% 0); transform: translate(4px, 0); }
+      15% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+    }
+    @keyframes glitchLayer2 {
+      0%, 100% { clip-path: inset(0 0 100% 0); }
+      8% { clip-path: inset(70% 0 10% 0); transform: translate(5px, 0); }
+      12% { clip-path: inset(10% 0 70% 0); transform: translate(-3px, 0); }
+      16% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+    }
+    @keyframes scanline {
+      0% { top: -10%; }
+      100% { top: 110%; }
+    }
+    @keyframes flicker {
+      0%, 95%, 100% { opacity: 1; }
+      96% { opacity: 0.4; }
+      97% { opacity: 1; }
+      98% { opacity: 0.7; }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 8px rgba(200, 50, 50, 0.3), inset 0 0 8px rgba(200, 50, 50, 0.1); }
+      50% { box-shadow: 0 0 20px rgba(200, 50, 50, 0.5), inset 0 0 15px rgba(200, 50, 50, 0.2); }
+    }
+    @keyframes subtleDrift {
+      0%, 100% { transform: scale(1.05) translate(0, 0); }
+      25% { transform: scale(1.07) translate(-5px, -3px); }
+      50% { transform: scale(1.05) translate(3px, -5px); }
+      75% { transform: scale(1.07) translate(-3px, 2px); }
+    }
+    @keyframes noiseShift {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    .title-glitch {
+      animation: glitchText 4s infinite;
+    }
+    .title-glitch::before,
+    .title-glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .title-glitch::before {
+      color: #ff003c;
+      animation: glitchLayer1 3s infinite;
+      z-index: -1;
+    }
+    .title-glitch::after {
+      color: #00e5ff;
+      animation: glitchLayer2 3s infinite;
+      z-index: -1;
+    }
+
+    .menu-btn {
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(180, 60, 60, 0.3);
+      transition: all 0.3s ease;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+    .menu-btn:hover {
+      border-color: rgba(220, 80, 80, 0.7);
+      background: rgba(120, 20, 20, 0.5) !important;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(200, 50, 50, 0.6), inset 0 0 20px rgba(200, 50, 50, 0.3);
+    }
+    .menu-btn:active {
+      transform: scale(0.97);
+    }
+
+    .scanline-overlay::after {
+      content: '';
+      position: absolute;
+      left: 0; width: 100%; height: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      animation: scanline 3s linear infinite;
+      pointer-events: none;
+    }
+
+    .noise-overlay {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      animation: noiseShift 0.5s steps(10) infinite;
+    }
+
+    .bg-image-layer {
+      animation: subtleDrift 20s ease-in-out infinite;
+    }
+
+    .admin-btn {
+      opacity: 0.3;
+      transition: opacity 0.3s;
+    }
+    .admin-btn:hover { opacity: 1; }
+
+    .bottom-icon {
+      transition: all 0.3s ease;
+    }
+    .bottom-icon:hover {
+      color: #dc3545;
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 8px rgba(200, 50, 50, 0.6));
+    }
+
+    .btn-appear {
+      animation: fadeSlideUp 0.6s ease-out both;
+    }
+    .flicker { animation: flicker 5s infinite; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="relative w-full h-full overflow-hidden scanline-overlay" style="background: #0a0608;">
+   <!-- Background image layers --> <picture id="bg-picture">
+    <source media="(max-width: 768px)" srcset="images/menuwallpaper.png, images/menuwallpaperformobilewidth.png, images/menuwallpaperformobilewidth.jpg" type="image/webp">
+    <source media="(max-width: 768px)" srcset="images/menuwallpaper.png, images/menuwallpaperformobilewidth.jpg" type="image/png">
+    <source media="(min-width: 769px)" srcset="images/menuwallpaper.png, images/menuwallpaper.png, images/menuwallpaper.jpg" type="image/webp">
+    <source media="(min-width: 769px)" srcset="images/menuwallpaper.png, images/menuwallpaper.jpg" type="image/png">
+    <img id="bg-img" src="images/menuwallpaper.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover bg-image-layer" style="filter: brightness(0.45) contrast(1.1) saturate(0.8);" loading="lazy" onerror="console.warn('Background image failed to load from:', this.src); this.parentElement.style.display='none';">
+   </picture> <!-- Dark gradient overlays -->
+   <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,6,8,0.5) 0%, rgba(10,6,8,0.2) 40%, rgba(10,6,8,0.3) 70%, rgba(10,6,8,0.8) 100%);"></div>
+   <div class="absolute inset-0" style="background: radial-gradient(ellipse at center 30%, transparent 30%, rgba(10,6,8,0.4) 100%);"></div><!-- Noise overlay -->
+   <div class="absolute inset-0 noise-overlay pointer-events-none"></div><!-- Vignette -->
+   <div class="absolute inset-0 pointer-events-none" style="box-shadow: inset 0 0 150px 60px rgba(0,0,0,0.6);"></div><!-- Content -->
+   <div class="relative z-10 flex flex-col items-center justify-between h-full w-full px-4 py-8">
+    <!-- Admin button (local only) -->
+    <div class="w-full flex justify-end pr-4 pt-2" id="admin-container" style="display:none;">
+     <button class="admin-btn text-xs px-3 py-2 rounded border border-red-700/50 text-red-300" style="font-family:'Rajdhani',sans-serif; background: rgba(60,20,20,0.6); transition: all 0.3s ease;">🛡️ ADMIN</button>
+    </div>
+    <div id="admin-spacer" style="height: 0;"></div><!-- Title section -->
+    <div class="flex flex-col items-center mt-4 flicker">
+     <h1 id="main-title" class="title-glitch relative text-center font-bold tracking-widest uppercase leading-tight" data-text="Bungou Stray Dogs" style="font-family:'Cinzel Decorative',serif; font-size: clamp(1.6rem, 5vw, 3.2rem); color: #e8d5c4; text-shadow: 0 0 30px rgba(180,60,40,0.4), 0 2px 10px rgba(0,0,0,0.8);">Bungou Stray Dogs</h1>
+     <div class="w-24 h-px my-3" style="background: linear-gradient(90deg, transparent, #8b3a3a, transparent);"></div>
+     <h2 id="subtitle" class="tracking-[0.5em] uppercase text-center" style="font-family:'Special Elite',cursive; font-size: clamp(1.1rem, 3vw, 2rem); color: #c8524a; text-shadow: 0 0 20px rgba(200,50,50,0.5);">Page 0</h2>
+    </div><!-- Menu buttons -->
+    <nav class="flex flex-col items-center justify-center gap-2 w-full max-w-xs my-6">
+     <button class="menu-btn btn-appear w-full py-3 px-6 rounded-lg flex items-center justify-center gap-3" style="background: rgba(60,15,15,0.25); animation-delay: 0.1s; font-family:'Rajdhani',sans-serif;"> <i data-lucide="play" style="width:20px;height:20px;color:#c8524a;flex-shrink:0;"></i> <span class="text-base font-semibold tracking-wider uppercase" style="color:#e8d5c4;">Start Game</span> </button> <button class="menu-btn btn-appear w-full py-3 px-6 rounded-lg flex items-center justify-center gap-3" style="background: rgba(60,15,15,0.25); animation-delay: 0.25s; font-family:'Rajdhani',sans-serif;"> <i data-lucide="save" style="width:20px;height:20px;color:#c8524a;flex-shrink:0;"></i> <span class="text-base font-semibold tracking-wider uppercase" style="color:#e8d5c4;">Load Game</span> </button> <button class="menu-btn btn-appear w-full py-3 px-6 rounded-lg flex items-center justify-center gap-3" style="background: rgba(60,15,15,0.25); animation-delay: 0.4s; font-family:'Rajdhani',sans-serif;"> <i data-lucide="book-open" style="width:20px;height:20px;color:#c8524a;flex-shrink:0;"></i> <span class="text-base font-semibold tracking-wider uppercase" style="color:#e8d5c4;">Chapters</span> </button> <button class="menu-btn btn-appear w-full py-3 px-6 rounded-lg flex items-center justify-center gap-3" style="background: rgba(60,15,15,0.25); animation-delay: 0.55s; font-family:'Rajdhani',sans-serif;"> <i data-lucide="shopping-bag" style="width:20px;height:20px;color:#c8524a;flex-shrink:0;"></i> <span class="text-base font-semibold tracking-wider uppercase" style="color:#e8d5c4;">Shop</span> </button> <button class="menu-btn btn-appear w-full py-3 px-6 rounded-lg flex items-center justify-center gap-3" style="background: rgba(60,15,15,0.25); animation-delay: 0.7s; font-family:'Rajdhani',sans-serif;"> <i data-lucide="settings" style="width:20px;height:20px;color:#c8524a;flex-shrink:0;"></i> <span class="text-base font-semibold tracking-wider uppercase" style="color:#e8d5c4;">Settings</span> </button>
+    </nav><!-- Bottom icons -->
+    <div class="flex items-center gap-6 pb-2">
+     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="bottom-icon" style="color: #e8d5c4aa;"> <i data-lucide="youtube" style="width:26px;height:26px;"></i> </a> <a href="#" id="share-link" class="bottom-icon" style="color: #e8d5c4aa;" onclick="event.preventDefault(); shareLink();"> <i data-lucide="share-2" style="width:24px;height:24px;"></i> </a>
+    </div><!-- Share toast -->
+    <div id="share-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-2 rounded-lg text-sm pointer-events-none opacity-0 transition-opacity duration-300" style="background: rgba(120,30,30,0.9); color: #e8d5c4; font-family:'Rajdhani',sans-serif; border: 1px solid rgba(200,60,60,0.4);">
+     Link copied!
+    </div>
+   </div>
+  </div>
+  <script>
+    // Show admin button only on localhost
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      document.getElementById('admin-container').style.display = 'flex';
+    }
+
+    function shareLink() {
+      const url = window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).catch(() => {});
+      }
+      const toast = document.getElementById('share-toast');
+      toast.style.opacity = '1';
+      setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+    }
+
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9eee670757bb73bc',t:'MTc3NjYyNzg1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
