@@ -1,0 +1,17 @@
+[
+  {
+    "file": "json/chapter1.json",
+    "type": "The Worst Day Ever",
+    "thumbnail": "images/backgrounds/river.jpg"
+  },
+  {
+    "file": "json/chapter2.json",
+    "type": "main",
+    "thumbnail": "images/ch2.jpg"
+  },
+  {
+    "file": "json/bonus1.json",
+    "type": "bonus",
+    "thumbnail": "images/bonus.jpg"
+  }
+]

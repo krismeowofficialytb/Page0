@@ -1,6 +1,11 @@
 {
-  "chapter": 1,
+  "id": "chapter1",
   "title": "The Worst Day Ever (Probably)",
+  "type": "main",
+  "thumbnail": "images/ch1.jpg",
+
+
+
   "scenes": [
     {
       "id": "c1_s01",
