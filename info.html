@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Info & Credits — Page 0</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=IM+Fell+English:ital@0;1&family=Rajdhani:wght@300;400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #e8d5c4;
+  --ink-dim:   rgba(232,213,196,0.55);
+  --ink-faint: rgba(232,213,196,0.22);
+  --red:       #c8524a;
+  --red-dim:   rgba(200,82,74,0.35);
+  --red-faint: rgba(200,82,74,0.1);
+  --bg:        #0a0608;
+  --paper:     rgba(18,9,11,0.82);
+  --border:    rgba(139,58,58,0.28);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IM Fell English', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── FIXED BG ── */
+.bg-layer {
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(80,20,20,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(60,15,15,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(10,4,6,0) 0%, rgba(0,0,0,0.6) 100%),
+    #0a0608;
+}
+
+/* Paper texture overlay */
+.paper-texture {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.8;
+}
+
+/* Vignette */
+.vignette {
+  position: fixed; inset: 0; z-index: 2; pointer-events: none;
+  box-shadow: inset 0 0 180px 60px rgba(0,0,0,0.75);
+}
+
+/* Horizontal rules that look hand-drawn */
+.ink-line {
+  display: block; width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border) 20%, rgba(139,58,58,0.5) 50%, var(--border) 80%, transparent 100%);
+  margin: 2rem 0;
+  position: relative;
+}
+.ink-line::after {
+  content: '◆';
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8px; color: var(--red-dim);
+  background: var(--bg);
+  padding: 0 8px;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── HEADER AREA ── */
+.page-header {
+  position: relative; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 48px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.back-btn {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--ink);
+  background: rgba(60,15,15,0.25);
+  border: 1px solid var(--red-dim);
+  border-radius: 6px; cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 7px 14px; backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+.back-btn:hover {
+  background: rgba(120,20,20,0.45);
+  border-color: rgba(200,80,80,0.6);
+  transform: translateX(-3px);
+}
+
+.page-title-wrap { text-align: center; flex: 1; }
+.page-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 30px rgba(180,60,40,0.35), 0 2px 10px rgba(0,0,0,0.8);
+}
+.page-sub {
+  font-family: 'Special Elite', cursive;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  color: var(--red);
+  letter-spacing: 0.45em; text-transform: uppercase;
+  margin-top: 5px;
+  text-shadow: 0 0 18px rgba(200,50,50,0.5);
+}
+.header-spacer { width: 90px; }
+
+/* ── MAIN SCROLL ── */
+main {
+  position: relative; z-index: 10;
+  max-width: 760px; margin: 0 auto;
+  padding: 60px 48px 100px;
+}
+
+/* ── MANUSCRIPT STAMP (unique element) ── */
+.stamp-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 56px;
+  gap: 16px;
+}
+.stamp {
+  position: relative;
+  width: 110px; height: 110px;
+  border: 2px solid var(--red-dim);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.stamp::before {
+  content: '';
+  position: absolute; inset: 6px;
+  border: 1px dashed rgba(200,82,74,0.25);
+  border-radius: 50%;
+}
+.stamp-inner {
+  font-family: 'Special Elite', cursive;
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--red);
+  text-align: center; line-height: 1.6;
+}
+.stamp-year {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 18px; color: var(--red);
+  text-shadow: 0 0 12px rgba(200,50,50,0.4);
+}
+.stamp-notice {
+  font-family: 'Special Elite', cursive;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink-dim);
+  text-align: center;
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 52px; }
+
+.section-label {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.section-label-icon {
+  width: 30px; height: 30px;
+  border: 1px solid var(--red-dim);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--red-faint);
+  flex-shrink: 0;
+}
+.section-label-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red);
+}
+
+.section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: var(--ink);
+  margin-bottom: 18px;
+  text-shadow: 0 0 20px rgba(180,60,40,0.25);
+}
+
+.section p {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  color: rgba(232,213,196,0.82);
+  line-height: 1.95;
+  margin-bottom: 14px;
+}
+.section p em {
+  color: var(--ink);
+  font-style: italic;
+}
+.section p strong {
+  color: var(--ink);
+  font-style: normal;
+}
+
+/* Legal block — looks like a small official document */
+.legal-block {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 22px 28px;
+  background: rgba(10,4,6,0.55);
+  backdrop-filter: blur(4px);
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.legal-block::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(to bottom, var(--red-dim), transparent);
+}
+.legal-block p {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: rgba(232,213,196,0.7);
+  margin-bottom: 10px;
+}
+.legal-block p:last-child { margin-bottom: 0; }
+
+/* Credits table */
+.credits-list {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.credit-row {
+  display: flex; align-items: baseline;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(139,58,58,0.12);
+}
+.credit-row:last-child { border-bottom: none; }
+.credit-role {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red);
+  flex-shrink: 0; min-width: 120px;
+}
+.credit-value {
+  font-family: 'IM Fell English', serif;
+  font-size: 14px;
+  color: var(--ink-dim);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Music credits */
+.music-list {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.music-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 10px 14px;
+  background: rgba(200,82,74,0.04);
+  border: 1px solid rgba(139,58,58,0.15);
+  border-radius: 5px;
+  align-items: center;
+}
+.music-title {
+  font-family: 'Special Elite', cursive;
+  font-size: 13px; color: var(--ink);
+  margin-bottom: 3px;
+}
+.music-source {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; letter-spacing: 1px;
+  color: var(--red); opacity: 0.75;
+  text-transform: uppercase;
+}
+.music-own {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(200,82,74,0.5);
+  white-space: nowrap;
+}
+
+/* Privacy highlight */
+.privacy-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(200,82,74,0.08);
+  border: 1px solid rgba(200,82,74,0.22);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+/* Contact block */
+.contact-block {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(60,15,15,0.2);
+  border: 1px solid var(--red-dim);
+  border-radius: 8px;
+  padding: 18px 22px;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.contact-block:hover {
+  background: rgba(120,20,20,0.35);
+  border-color: rgba(200,80,80,0.55);
+}
+.contact-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--red-dim);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--red-faint);
+  flex-shrink: 0;
+}
+.contact-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--red); opacity: 0.75;
+  margin-bottom: 3px;
+}
+.contact-value {
+  font-family: 'IM Fell English', serif;
+  font-size: 14px; color: var(--ink);
+  font-style: italic;
+}
+
+/* ── WARNING BANNER ── */
+.warning-banner {
+  border: 1px solid rgba(200,82,74,0.38);
+  border-radius: 8px;
+  padding: 18px 22px;
+  background: rgba(200,50,50,0.06);
+  display: flex; gap: 14px; align-items: flex-start;
+  margin-bottom: 18px;
+}
+.warning-icon { flex-shrink: 0; margin-top: 2px; }
+.warning-text {
+  font-family: 'IM Fell English', serif;
+  font-size: 14px; color: rgba(232,213,196,0.78); line-height: 1.85;
+}
+.warning-text strong { color: var(--ink); }
+
+/* ── FOOTER ── */
+footer {
+  position: relative; z-index: 10;
+  text-align: center;
+  padding: 32px 48px 48px;
+  border-top: 1px solid var(--border);
+}
+.footer-text {
+  font-family: 'Special Elite', cursive;
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ── FLOATING QUILL deco ── */
+.quill-deco {
+  position: fixed;
+  pointer-events: none; z-index: 5;
+  color: rgba(232,213,196,0.04);
+}
+.quill-deco.q1 { top: 8%; right: 3%; animation: floatDeco 12s ease-in-out infinite; }
+.quill-deco.q2 { bottom: 12%; left: 2%; animation: floatDeco 9s ease-in-out infinite; animation-delay: 3s; }
+.quill-deco.q3 { top: 50%; right: 1.5%; animation: floatDeco 15s ease-in-out infinite; animation-delay: 6s; }
+
+@keyframes floatDeco {
+  0%,100% { transform: translateY(0) rotate(-5deg); opacity: 0.04; }
+  50%      { transform: translateY(-18px) rotate(2deg); opacity: 0.07; }
+}
+
+@media (max-width: 600px) {
+  .page-header { padding: 16px 18px 14px; }
+  .header-spacer { display: none; }
+  main { padding: 40px 20px 70px; }
+  .credit-role { min-width: 90px; }
+  .music-row { grid-template-columns: 1fr; }
+  .music-own { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-layer"></div>
+<div class="paper-texture"></div>
+<div class="vignette"></div>
+
+<!-- Floating deco -->
+<div class="quill-deco q1"><i data-lucide="feather" style="width:80px;height:80px;"></i></div>
+<div class="quill-deco q2"><i data-lucide="scroll"  style="width:64px;height:64px;"></i></div>
+<div class="quill-deco q3"><i data-lucide="book"    style="width:56px;height:56px;"></i></div>
+
+<!-- HEADER -->
+<header class="page-header">
+  <button class="back-btn" onclick="window.location.href='index.html'">
+    <i data-lucide="arrow-left" style="width:14px;height:14px;"></i>
+    Menu
+  </button>
+  <div class="page-title-wrap">
+    <div class="page-title">Page 0</div>
+    <div class="page-sub">Info & Credits</div>
+  </div>
+  <div class="header-spacer"></div>
+</header>
+
+<main>
+
+  <!-- STAMP -->
+  <div class="stamp-block reveal">
+    <div class="stamp">
+      <div class="stamp-inner">Fan<br>Project</div>
+      <div class="stamp-year">BSD</div>
+    </div>
+    <div class="stamp-notice">A non-commercial fan creation — not for redistribution</div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="alert-triangle" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Important Disclaimer</span>
+    </div>
+
+    <div class="warning-banner">
+      <div class="warning-icon"><i data-lucide="shield-alert" style="width:18px;height:18px;color:#c8524a;"></i></div>
+      <div class="warning-text">
+        <strong>Bungou Stray Dogs: Page 0</strong> is an unofficial, non-commercial fan project created out of love for the original work. It is not affiliated with, endorsed by, or connected in any way to the official rights holders.
+      </div>
+    </div>
+
+    <div class="legal-block">
+      <p><em>Bungou Stray Dogs</em> — including all characters, storylines, artwork, and associated intellectual property — is the exclusive property of <strong>Kafka Asagiri</strong> (story) and <strong>Sango Harukawa</strong> (art), published by <strong>Kadokawa Corporation</strong>. The anime adaptation is produced by <strong>Bones Inc.</strong> All rights reserved to their respective owners.</p>
+      <p>This fan game does not claim ownership over any of the above. All original characters, names, and narrative elements derived from the <em>Bungou Stray Dogs</em> franchise remain the sole intellectual property of their creators.</p>
+      <p>This project exists solely as a creative tribute and is distributed freely, without monetization of any kind. No profit is made from its creation or distribution.</p>
+    </div>
+  </section>
+
+  <div class="ink-line reveal"></div>
+
+  <!-- DISTRIBUTION -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="lock" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Distribution Policy</span>
+    </div>
+    <h2>Keep It Among Friends</h2>
+
+    <div class="warning-banner">
+      <div class="warning-icon"><i data-lucide="x-circle" style="width:18px;height:18px;color:#c8524a;"></i></div>
+      <div class="warning-text">
+        <strong>Please do not redistribute, repost, mirror, or share this game publicly</strong> — including on social media, file-sharing platforms, or any other public-facing channel.
+      </div>
+    </div>
+
+    <p>This game was made as a private creative work and is intended to remain so. Public distribution of unofficial fan content using copyrighted intellectual property can create legal complications for the creator, even when no commercial intent is involved.</p>
+    <p>If you have received access to this game, you are welcome to enjoy it personally. You are kindly asked <em>not</em> to pass it along without the creator's express permission. Respecting this keeps the project alive and protects everyone involved.</p>
+    <p>Streaming, recording, or posting gameplay footage publicly is also discouraged for the same reasons. Thank you for understanding.</p>
+  </section>
+
+  <div class="ink-line reveal"></div>
+
+  <!-- MUSIC CREDITS -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="music" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Music & Audio</span>
+    </div>
+    <h2>Soundtrack Credits</h2>
+
+    <p>All music and audio used in this game belongs to their original artists and rights holders. No ownership is claimed over any track. Music is used for non-commercial, fan-creative purposes only.</p>
+
+    <div class="music-list" style="margin-top: 20px;">
+      <div class="music-row">
+        <div>
+          <div class="music-title">DEAD APPLE (TV Size)</div>
+          <div class="music-source">Bungou Stray Dogs OST — Bones Inc. / Kadokawa</div>
+        </div>
+        <div class="music-own">© Original Artists</div>
+      </div>
+      <div class="music-row">
+        <div>
+          <div class="music-title">Trash Candy</div>
+          <div class="music-source">Bungou Stray Dogs OST</div>
+        </div>
+        <div class="music-own">© Original Artists</div>
+      </div>
+      <div class="music-row">
+        <div>
+          <div class="music-title">Reason Living</div>
+          <div class="music-source">SCREEN mode — Bungou Stray Dogs S2 OP</div>
+        </div>
+        <div class="music-own">© Original Artists</div>
+      </div>
+      <div class="music-row">
+        <div>
+          <div class="music-title">Menu Theme / Ambient Tracks</div>
+          <div class="music-source">Bungou Stray Dogs Original Soundtrack</div>
+        </div>
+        <div class="music-own">© Original Artists</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 18px; font-size: 13px; color: rgba(232,213,196,0.5); font-style: italic;">
+      If you are a rights holder and have concerns regarding any audio used in this project, please contact the creator directly via the information below.
+    </p>
+  </section>
+
+  <div class="ink-line reveal"></div>
+
+  <!-- PRIVACY -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="eye-off" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Privacy & Data</span>
+    </div>
+    <h2>Your Data, Your Device</h2>
+
+    <div class="privacy-pill">
+      <i data-lucide="check-circle" style="width:12px;height:12px;"></i>
+      No tracking. No cookies. No servers.
+    </div>
+
+    <div class="legal-block">
+      <p><strong>This game collects no personal data of any kind.</strong> There are no analytics, no tracking scripts, no cookies, and no external services that receive information about you or your device.</p>
+      <p>The only data stored by this application is your <em>local game progress</em> — including your current chapter, unlocked chapters, and in-game settings. This data is saved exclusively via your browser's <strong>localStorage</strong> API, meaning it lives entirely on your own device and is never transmitted anywhere.</p>
+      <p>You may clear this data at any time by clearing your browser's local storage for this site, or through your browser settings. Doing so will reset your game progress.</p>
+      <p>No account is required. No login information is stored. No email address or personal identifier is collected or retained anywhere.</p>
+    </div>
+
+    <p style="font-size: 13px; color: rgba(232,213,196,0.5); font-style: italic;">
+      This policy is provided in good faith as a statement of intent. This game is a private, non-commercial fan project and does not fall under the regulatory scope of GDPR, CCPA, or similar legislation — however, the creator is committed to respecting your privacy regardless.
+    </p>
+  </section>
+
+  <div class="ink-line reveal"></div>
+
+  <!-- CREDITS -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="user" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Project Credits</span>
+    </div>
+    <h2>Made With</h2>
+
+    <div class="credits-list">
+      <div class="credit-row">
+        <span class="credit-role">Creator</span>
+        <span class="credit-value">Pioupiou — concept, writing, design & development</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Original Work</span>
+        <span class="credit-value">Bungou Stray Dogs by Kafka Asagiri & Sango Harukawa</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Animation Studio</span>
+        <span class="credit-value">Bones Inc. — anime adaptation</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Publisher</span>
+        <span class="credit-value">Kadokawa Corporation</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Fonts Used</span>
+        <span class="credit-value">Cinzel Decorative, IM Fell English, Rajdhani, Special Elite — via Google Fonts</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Icons</span>
+        <span class="credit-value">Lucide Icons (open source)</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Framework</span>
+        <span class="credit-value">Vanilla HTML / CSS / JavaScript — TailwindCSS</span>
+      </div>
+      <div class="credit-row">
+        <span class="credit-role">Hosting</span>
+        <span class="credit-value">Vercel</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ink-line reveal"></div>
+
+  <!-- CONTACT -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="mail" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Contact</span>
+    </div>
+    <h2>Get in Touch</h2>
+
+    <p>For any questions, concerns, takedown requests from rights holders, or general feedback, you are welcome to reach out via email. All messages will be read.</p>
+
+    <a class="contact-block" href="mailto:nuanmaru11@gmail.com">
+      <div class="contact-icon">
+        <i data-lucide="mail" style="width:16px;height:16px;color:#c8524a;"></i>
+      </div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">nuanmaru11@gmail.com</div>
+      </div>
+    </a>
+  </section>
+
+  <div class="ink-line reveal"></div>
+
+  <!-- FAIR USE / FINAL NOTE -->
+  <section class="section reveal">
+    <div class="section-label">
+      <div class="section-label-icon"><i data-lucide="scale" style="width:14px;height:14px;color:#c8524a;"></i></div>
+      <span class="section-label-text">Legal Note</span>
+    </div>
+    <h2>Fair Use & Good Faith</h2>
+
+    <div class="legal-block">
+      <p>This fan game is created under the doctrine of <strong>fair use</strong> (and its international equivalents), as it is non-commercial, transformative, and made for creative and appreciative purposes. It does not substitute for, compete with, or negatively impact the market for the original works.</p>
+      <p>The creator does not claim any rights over the <em>Bungou Stray Dogs</em> intellectual property. All copyrighted material remains the property of its respective owners. This project exists in the spirit of fan creativity and literary appreciation.</p>
+      <p>If any rights holder objects to this fan work, the creator will promptly address the concern upon contact. This project carries no intent to infringe, harm, or profit from any existing property.</p>
+    </div>
+
+    <p style="font-size: 13px; color: rgba(232,213,196,0.45); font-style: italic; margin-top: 8px;">
+      This disclaimer does not constitute legal advice. All statements above reflect the creator's genuine intent and good faith effort to respect intellectual property law.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-text">Bungou Stray Dogs: Page 0 — Fan Project — Not for redistribution</div>
+  <div style="margin-top: 10px; font-family: 'Rajdhani', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(232,213,196,0.2);">
+    All original content © their respective owners
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
