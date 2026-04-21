@@ -13,5 +13,10 @@
     "file": "json/bonus1.json",
     "type": "bonus",
     "thumbnail": "images/bonus.jpg"
+  },
+  {
+    "file": "json/bonus1.json",
+    "type": "bonus",
+    "thumbnail": "images/bonus.jpg"
   }
 ]

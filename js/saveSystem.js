@@ -29,15 +29,15 @@ function saveGame(data) {
   localStorage.setItem(SAVE_KEY, JSON.stringify(data));
 }
 
-// progression
+
 function updateProgress(chapter, scene) {
   let save = loadSave();
 
   save.currentChapter = chapter;
   save.currentScene = scene;
 
-  if (!save.unlockedChapters.includes(chapter + 1)) {
-    save.unlockedChapters.push(chapter + 1);
+  if (!save.unlockedChapters.includes(chapter)) {
+    save.unlockedChapters.push(chapter);
   }
 
   saveGame(save);

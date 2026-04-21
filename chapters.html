@@ -1,165 +1,571 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Chapters</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapters — Page 0</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-<script src="js/saveSystem.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@300;400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
 <style>
-body {
-  margin:0;
-  font-family: 'Rajdhani', sans-serif;
-  background: radial-gradient(circle at top, #1a0c0c, #0a0608);
-  color:#e8d5c4;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-h1 {
-  letter-spacing:6px;
-  margin-top:40px;
-  text-transform:uppercase;
-}
-
-.grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap:15px;
-  width:90%;
-  max-width:900px;
-  margin-top:40px;
-}
-
-.card {
-  position:relative;
-  height:140px;
-  border-radius:14px;
-  overflow:hidden;
-  cursor:pointer;
-
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(200,80,80,0.25);
-  transition:0.2s;
-}
-
-.card:hover {
-  transform:scale(1.05);
-  border-color: rgba(255,100,100,0.6);
-}
-
-.card img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(0.6);
-}
-
-.title {
-  position:absolute;
-  bottom:10px;
-  left:10px;
-  font-weight:bold;
-  text-shadow:0 0 10px black;
-}
-
-.lock {
-  position:absolute;
-  top:10px;
-  right:10px;
-  font-size:20px;
-}
-
-.locked {
-  filter: grayscale(1) brightness(0.4);
-  pointer-events:none;
-}
-
-.back {
-  position:absolute;
-  top:15px;
-  left:15px;
-  cursor:pointer;
-  opacity:0.8;
-}
-
-.back:hover {
-  opacity:1;
-}
-</style>
-</head>
-
-<body>
-
-<div class="back" onclick="goBack()">← Menu</div>
-
-<h1>CHAPTERS</h1>
-
-<div class="grid" id="grid"></div>
-<script src="js/saveSystem.js"></script>
-
-<script>
-async function loadChapters() {
-
-  let save;
-  try {
-    save = loadSave();
-  } catch (e) {
-    localStorage.clear();
-    save = getDefaultSave();
+  /* ── KEYFRAMES ── */
+  @keyframes subtleDrift {
+    0%,100% { transform:scale(1.05) translate(0,0); }
+    25%      { transform:scale(1.07) translate(-5px,-3px); }
+    50%      { transform:scale(1.05) translate(3px,-5px); }
+    75%      { transform:scale(1.07) translate(-3px,2px); }
+  }
+  @keyframes noiseShift {
+    0%   { background-position:0 0; }
+    100% { background-position:100% 100%; }
+  }
+  @keyframes scanline {
+    0%   { top:-10%; }
+    100% { top:110%; }
+  }
+  @keyframes flicker {
+    0%,95%,100% { opacity:1; }
+    96% { opacity:0.4; }
+    97% { opacity:1; }
+    98% { opacity:0.7; }
+  }
+  @keyframes glitchText {
+    0%,100% { transform:translate(0); opacity:1; }
+    10% { transform:translate(-3px,2px); opacity:0.8; }
+    20% { transform:translate(3px,-1px); opacity:1; }
+    40% { transform:translate(-2px,-2px); opacity:0.9; }
+    50% { transform:translate(2px,1px); opacity:1; }
+    60% { transform:translate(0); }
+  }
+  @keyframes glitchLayer1 {
+    0%,100% { clip-path:inset(0 0 100% 0); }
+    5%  { clip-path:inset(20% 0 60% 0); transform:translate(-4px,0); }
+    10% { clip-path:inset(50% 0 30% 0); transform:translate(4px,0); }
+    15% { clip-path:inset(0 0 100% 0); transform:translate(0); }
+  }
+  @keyframes glitchLayer2 {
+    0%,100% { clip-path:inset(0 0 100% 0); }
+    8%  { clip-path:inset(70% 0 10% 0); transform:translate(5px,0); }
+    12% { clip-path:inset(10% 0 70% 0); transform:translate(-3px,0); }
+    16% { clip-path:inset(0 0 100% 0); transform:translate(0); }
+  }
+  @keyframes fadeSlideUp {
+    from { opacity:0; transform:translateY(28px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes pulseGlow {
+    0%,100% { box-shadow:0 0 8px rgba(200,50,50,0.25), inset 0 0 8px rgba(200,50,50,0.08); }
+    50%      { box-shadow:0 0 22px rgba(200,50,50,0.45), inset 0 0 14px rgba(200,50,50,0.15); }
+  }
+  @keyframes floatIcon {
+    0%,100% { transform:translateY(0) rotate(0deg); opacity:0.07; }
+    33%      { transform:translateY(-10px) rotate(2deg); opacity:0.1; }
+    66%      { transform:translateY(-5px) rotate(-1deg); opacity:0.08; }
+  }
+  @keyframes floatIcon2 {
+    0%,100% { transform:translateY(0) rotate(0deg); opacity:0.06; }
+    50%      { transform:translateY(-14px) rotate(-2deg); opacity:0.09; }
+  }
+  @keyframes shimmer {
+    0%   { left:-100%; }
+    100% { left:200%; }
+  }
+  @keyframes progressPulse {
+    0%,100% { box-shadow:0 0 4px rgba(200,50,50,0.3); }
+    50%      { box-shadow:0 0 12px rgba(200,50,50,0.6); }
   }
 
-  const res = await fetch("json/chaptersIndex.json");
-  const chapters = await res.json();
+  * { box-sizing:border-box; margin:0; padding:0; }
+
+  body {
+    min-height:100vh;
+    background:#0a0608;
+    color:#e8d5c4;
+    font-family:'Rajdhani',sans-serif;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* ── WALLPAPER (même logique que index) ── */
+  #wallpaper {
+    position:fixed; inset:0; z-index:0;
+    width:100%; height:100%; object-fit:cover;
+    filter:brightness(0.6) contrast(1.05) saturate(0.8);
+    animation:subtleDrift 20s ease-in-out infinite;
+  }
+
+  /* Gradients overlay — exactement comme index */
+  .overlay-grad {
+    position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg,
+      rgba(10,6,8,0.35) 0%,
+      rgba(10,6,8,0.1)  40%,
+      rgba(10,6,8,0.2)  70%,
+      rgba(10,6,8,0.7)  100%);
+  }
+  .overlay-radial {
+    position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:radial-gradient(ellipse at center 30%, transparent 40%, rgba(10,6,8,0.3) 100%);
+  }
+
+  /* noise */
+  .noise {
+    position:fixed; inset:0; z-index:2; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    animation:noiseShift 0.5s steps(10) infinite;
+  }
+
+  /* vignette */
+  .vignette {
+    position:fixed; inset:0; z-index:3; pointer-events:none;
+    box-shadow:inset 0 0 130px 55px rgba(0,0,0,0.55);
+  }
+
+  /* scanline */
+  .scanline::after {
+    content:''; position:fixed; z-index:100;
+    left:0; width:100%; height:4px;
+    background:rgba(255,255,255,0.04);
+    animation:scanline 3s linear infinite;
+    pointer-events:none;
+  }
+
+  /* ── FLOATING DECO ICONS (comme index mais version chapters) ── */
+  .deco-layer {
+    position:fixed; inset:0; z-index:4; pointer-events:none;
+  }
+  .deco-icon {
+    position:absolute;
+    color:#e8d5c4;
+  }
+  .d1 { top:10%; left:2%;   animation:floatIcon  9s ease-in-out infinite; }
+  .d2 { top:55%; left:1.5%; animation:floatIcon2 7s ease-in-out infinite; animation-delay:1s; }
+  .d3 { top:15%; right:2%;  animation:floatIcon  11s ease-in-out infinite; animation-delay:2s; }
+  .d4 { top:60%; right:2%;  animation:floatIcon2 8s ease-in-out infinite; animation-delay:0.5s; }
+  .d5 { bottom:10%; left:3%;  animation:floatIcon 12s ease-in-out infinite; animation-delay:3s; }
+  .d6 { bottom:8%; right:3%;  animation:floatIcon2 10s ease-in-out infinite; animation-delay:1.5s; }
+
+  /* ── HEADER ── */
+  header {
+    position:relative; z-index:10;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 40px 18px;
+    border-bottom:1px solid rgba(139,58,58,0.2);
+  }
+
+  .back-btn {
+    display:flex; align-items:center; gap:8px;
+    color:#e8d5c4;
+    background:rgba(60,15,15,0.25);
+    border:1px solid rgba(180,60,60,0.3);
+    border-radius:8px; cursor:pointer;
+    font-family:'Rajdhani',sans-serif;
+    font-size:13px; letter-spacing:2px; text-transform:uppercase;
+    padding:7px 14px; backdrop-filter:blur(8px);
+    transition:all 0.25s ease;
+    animation:pulseGlow 4s ease-in-out infinite;
+  }
+  .back-btn:hover {
+    background:rgba(120,20,20,0.5);
+    border-color:rgba(220,80,80,0.6);
+    transform:translateX(-3px);
+  }
+
+  .header-center { flex:1; text-align:center; }
+
+  .title-glitch {
+    position:relative; display:inline-block;
+    font-family:'Cinzel Decorative',serif;
+    font-size:clamp(1.2rem,3.5vw,2rem);
+    color:#e8d5c4; letter-spacing:0.12em;
+    text-shadow:0 0 30px rgba(180,60,40,0.4), 0 2px 10px rgba(0,0,0,0.8);
+    animation:glitchText 6s infinite;
+  }
+  .title-glitch::before,.title-glitch::after {
+    content:attr(data-text); position:absolute; top:0; left:0; width:100%; height:100%;
+  }
+  .title-glitch::before { color:#ff003c; animation:glitchLayer1 5s infinite; z-index:-1; }
+  .title-glitch::after  { color:#00e5ff; animation:glitchLayer2 5s infinite; z-index:-1; }
+
+  .header-sub {
+    font-family:'Special Elite',cursive;
+    font-size:clamp(0.8rem,2vw,1.1rem);
+    color:#c8524a; letter-spacing:0.45em; text-transform:uppercase;
+    margin-top:5px;
+    text-shadow:0 0 20px rgba(200,50,50,0.5);
+    animation:flicker 5s infinite;
+  }
+
+  .header-spacer { width:90px; }
+
+  /* ── DIVIDER (identique index) ── */
+  .divider {
+    position:relative; z-index:10;
+    display:flex; align-items:center; gap:12px;
+    padding:14px 40px 0;
+  }
+  .divider-line {
+    flex:1; height:1px;
+    background:linear-gradient(90deg,transparent,#8b3a3a,transparent);
+    opacity:0.45;
+  }
+  .divider-diamond { width:5px; height:5px; background:#8b3a3a; transform:rotate(45deg); opacity:0.6; }
+
+  /* ── PROGRESS ── */
+  .progress-wrap {
+    position:relative; z-index:10;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 40px 0;
+  }
+  .progress-label {
+    font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:#c8524a; opacity:0.65; white-space:nowrap;
+  }
+  .progress-track {
+    flex:1; height:2px; background:rgba(200,80,60,0.12);
+    border-radius:2px; overflow:hidden;
+  }
+  .progress-fill {
+    height:100%;
+    background:linear-gradient(90deg,#8b3a3a,#c8524a);
+    border-radius:2px; transition:width 0.9s ease;
+    animation:progressPulse 3s ease-in-out infinite;
+  }
+  .progress-count {
+    font-size:11px; letter-spacing:1px; color:#c8524a; opacity:0.65; white-space:nowrap;
+  }
+
+  /* ── GRID ── */
+  .chapters-grid {
+    position:relative; z-index:10;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(190px,1fr));
+    gap:18px;
+    padding:26px 40px 60px;
+    max-width:980px; margin:0 auto;
+  }
+
+  /* ── CARD ── */
+  .card {
+    position:relative;
+    border-radius:10px; overflow:hidden;
+    border:1px solid rgba(180,60,60,0.25);
+    background:rgba(60,15,15,0.2);
+    backdrop-filter:blur(6px);
+    aspect-ratio:2/3;
+    animation:fadeSlideUp 0.5s ease both;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card.unlocked {
+    cursor:pointer;
+    animation:pulseGlow 4s ease-in-out infinite, fadeSlideUp 0.5s ease both;
+  }
+  .card.unlocked:hover {
+    transform:translateY(-8px) scale(1.03);
+    border-color:rgba(200,82,74,0.65);
+    box-shadow:0 20px 50px rgba(0,0,0,0.7), 0 0 28px rgba(200,50,50,0.22);
+    z-index:20;
+  }
+
+  .card.locked {
+    cursor:not-allowed;
+    opacity:0.38;
+    filter:grayscale(0.6);
+  }
+
+  /* thumbnail */
+  .card-thumb {
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover;
+    filter:brightness(0.45) saturate(0.7) contrast(1.1);
+    transition:transform 0.5s ease, filter 0.3s ease;
+  }
+  .card.unlocked:hover .card-thumb {
+    transform:scale(1.07);
+    filter:brightness(0.62) saturate(0.88);
+  }
+  .card.locked .card-thumb {
+    filter:brightness(0.18) saturate(0) blur(2px);
+  }
+
+  /* gradient */
+  .card-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom,
+      rgba(10,6,8,0.05) 0%,
+      rgba(10,6,8,0.42) 52%,
+      rgba(10,6,8,0.93) 100%);
+  }
+
+  /* no-thumb fallback */
+  .card-no-thumb {
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg,rgba(60,15,15,0.8),rgba(20,8,10,0.95));
+  }
+  .card-no-thumb-num {
+    font-family:'Cinzel Decorative',serif;
+    font-size:2.8rem; color:rgba(200,82,74,0.1); letter-spacing:2px;
+  }
+
+  /* shimmer line on hover */
+  .card-shimmer {
+    position:absolute; top:0; left:0; right:0; height:100%;
+    overflow:hidden; pointer-events:none; z-index:3;
+    opacity:0; transition:opacity 0.3s;
+  }
+  .card-shimmer::after {
+    content:''; position:absolute; top:0; height:100%; width:30%;
+    background:linear-gradient(90deg,transparent,rgba(232,213,196,0.06),transparent);
+    animation:shimmer 2s ease-in-out infinite;
+  }
+  .card.unlocked:hover .card-shimmer { opacity:1; }
+
+  /* card body */
+  .card-body {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:14px; z-index:4;
+  }
+  .card-num-tag {
+    display:inline-block;
+    font-size:10px; letter-spacing:3px; text-transform:uppercase;
+    color:#c8524a;
+    border:1px solid rgba(200,82,74,0.35);
+    padding:2px 7px; border-radius:3px;
+    margin-bottom:6px; font-family:'Rajdhani',sans-serif;
+  }
+  .card-title {
+    font-family:'Special Elite',cursive;
+    font-size:14px; color:#e8d5c4; line-height:1.35;
+    text-shadow:0 2px 8px rgba(0,0,0,0.9);
+  }
+
+  /* badge */
+  .badge {
+    position:absolute; top:10px; right:10px;
+    width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    backdrop-filter:blur(6px); z-index:5;
+  }
+  .badge-unlocked { background:rgba(200,82,74,0.18); border:1px solid rgba(200,82,74,0.5); }
+  .badge-locked   { background:rgba(20,10,10,0.75);  border:1px solid rgba(100,50,50,0.3); }
+
+  /* bonus chip */
+  .bonus-chip {
+    position:absolute; top:10px; left:10px;
+    font-family:'Rajdhani',sans-serif;
+    font-size:9px; letter-spacing:2px; text-transform:uppercase;
+    color:#e8d5c4; background:rgba(180,60,40,0.55);
+    border:1px solid rgba(200,80,60,0.4);
+    padding:2px 7px; border-radius:3px; z-index:5; font-weight:700;
+  }
+
+  /* locked tooltip */
+  .card.locked::after {
+    content:"Finish previous chapters first";
+    position:absolute; bottom:105%; left:50%;
+    transform:translateX(-50%);
+    background:rgba(10,6,8,0.95);
+    border:1px solid rgba(180,60,60,0.3);
+    color:#e8d5c4; font-family:'Rajdhani',sans-serif;
+    font-size:11px; padding:6px 10px; border-radius:4px;
+    white-space:nowrap; opacity:0; pointer-events:none;
+    transition:opacity 0.2s; z-index:100; letter-spacing:1px;
+  }
+  .card.locked:hover::after { opacity:1; }
+
+  @media (max-width:600px) {
+    header { padding:16px 16px 12px; }
+    .header-spacer { display:none; }
+    .chapters-grid { padding:18px 14px 40px; gap:12px; }
+    .progress-wrap,.divider { padding-left:16px; padding-right:16px; }
+  }
+</style>
+</head>
+<body class="scanline">
+
+<!-- WALLPAPER — même image que ton index -->
+<img id="wallpaper" src="images/backgrounds/chapter.png" alt=""
+  onerror="this.style.display='none';">
+
+<div class="overlay-grad"></div>
+<div class="overlay-radial"></div>
+<div class="noise"></div>
+<div class="vignette"></div>
+
+<!-- ICÔNES FLOTTANTES DÉCO -->
+<div class="deco-layer">
+  <div class="deco-icon d1"><i data-lucide="book-open"  style="width:44px;height:44px;"></i></div>
+  <div class="deco-icon d2"><i data-lucide="feather"    style="width:38px;height:38px;"></i></div>
+  <div class="deco-icon d3"><i data-lucide="scroll"     style="width:40px;height:40px;"></i></div>
+  <div class="deco-icon d4"><i data-lucide="compass"    style="width:36px;height:36px;"></i></div>
+  <div class="deco-icon d5"><i data-lucide="bookmark"   style="width:34px;height:34px;"></i></div>
+  <div class="deco-icon d6"><i data-lucide="sparkles"   style="width:36px;height:36px;"></i></div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <button class="back-btn" onclick="goBack()">
+    <i data-lucide="arrow-left" style="width:15px;height:15px;"></i>
+    Menu
+  </button>
+
+  <div class="header-center">
+    <div class="title-glitch" data-text="Page 0">Page 0</div>
+    <div class="header-sub">Chapters</div>
+  </div>
+
+  <div class="header-spacer"></div>
+</header>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-diamond"></div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-wrap" id="progressWrap" style="display:none;">
+  <span class="progress-label">Progress</span>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  </div>
+  <span class="progress-count" id="progressCount"></span>
+</div>
+
+<!-- GRID -->
+<div class="chapters-grid" id="grid"></div>
+
+<script>
+const SAVE_KEY = "otome_save_v1";
+function getDefaultSave() {
+  return { playerSeenIntro:false, unlockedChapters:[], currentChapter:1, currentScene:0 };
+}
+function loadSave() {
+  const raw = localStorage.getItem(SAVE_KEY);
+  if (!raw) return getDefaultSave();
+  try { return JSON.parse(raw); }
+  catch { localStorage.removeItem(SAVE_KEY); return getDefaultSave(); }
+}
+function saveGame(data) { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); }
+
+function extractChapNum(file) {
+  const m = (file||"").match(/\d+/);
+  return m ? parseInt(m[0]) : null;
+}
+function isBonus(ch) {
+  return (ch.file||"").toLowerCase().includes("bonus") ||
+         (ch.type||"").toLowerCase()==="bonus";
+}
+function isUnlocked(ch, save) {
+  const num    = extractChapNum(ch.file);
+  const played = save.currentChapter > 1 || save.currentScene > 0;
+  if (!save.unlockedChapters.includes(num)) return false;
+  if (num === 1) return played;
+  return true;
+}
+
+async function loadChapters() {
+  let save;
+  try { save = loadSave(); } catch { localStorage.clear(); save = getDefaultSave(); }
+
+  let chapters;
+  try {
+    const res = await fetch("json/chaptersIndex.json");
+    let raw = await res.text();
+    raw = raw.trim();
+    // Corrige le doublon JSON si besoin
+    if (raw.startsWith("[")) {
+      const end = raw.indexOf("]");
+      if (end !== -1) raw = raw.slice(0, end+1);
+    }
+    chapters = JSON.parse(raw);
+  } catch {
+    chapters = [
+      { file:"json/chapter1.json", type:"The Worst Day Ever", thumbnail:"images/backgrounds/river.jpg" },
+      { file:"json/chapter2.json", type:"A New World",        thumbnail:"" },
+      { file:"json/bonus1.json",   type:"bonus",              thumbnail:"" }
+    ];
+  }
 
   const grid = document.getElementById("grid");
+  grid.innerHTML = "";
 
-  
-  chapters.forEach(ch => {
+  const unlockedCount = chapters.filter(ch => isUnlocked(ch, save)).length;
+  document.getElementById("progressWrap").style.display = "flex";
+  document.getElementById("progressFill").style.width = (unlockedCount/chapters.length*100)+"%";
+  document.getElementById("progressCount").textContent = unlockedCount+" / "+chapters.length;
 
-    let dataLoaded = true;
-
-    const unlocked = save.unlockedChapters.includes(
-      parseInt(ch.file.match(/\d+/)[0])
-    );
+  chapters.forEach((ch, idx) => {
+    const unlocked = isUnlocked(ch, save);
+    const num      = extractChapNum(ch.file) ?? (idx+1);
+    const bonus    = isBonus(ch);
+    const title    = ch.type || ("Chapter "+num);
+    const numLabel = bonus ? "Bonus" : ("Ch. "+String(num).padStart(2,"0"));
 
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card "+(unlocked?"unlocked":"locked");
+    card.style.animationDelay = (idx*0.08)+"s";
 
-    if (!unlocked) card.classList.add("locked");
+    let thumbHTML;
+    if (ch.thumbnail) {
+      thumbHTML = `
+        <img class="card-thumb" src="${ch.thumbnail}" alt="${title}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="card-no-thumb" style="display:none;">
+          <span class="card-no-thumb-num">${String(num).padStart(2,"0")}</span>
+        </div>`;
+    } else {
+      thumbHTML = `<div class="card-no-thumb">
+        <span class="card-no-thumb-num">${String(num).padStart(2,"0")}</span>
+      </div>`;
+    }
+
+    const badge = unlocked
+      ? `<div class="badge badge-unlocked"><i data-lucide="check" style="width:12px;height:12px;color:#c8524a;"></i></div>`
+      : `<div class="badge badge-locked"><i data-lucide="lock" style="width:11px;height:11px;color:rgba(180,80,80,0.45);"></i></div>`;
+
+    const bonusChip = bonus ? `<div class="bonus-chip">Bonus</div>` : "";
 
     card.innerHTML = `
-      <img src="${ch.thumbnail}">
-      <div class="title">${ch.type.toUpperCase()}</div>
-      <div class="lock">${unlocked ? "✔" : "🔒"}</div>
+      ${thumbHTML}
+      <div class="card-overlay"></div>
+      <div class="card-shimmer"></div>
+      ${badge}
+      ${bonusChip}
+      <div class="card-body">
+        <div class="card-num-tag">${numLabel}</div>
+        <div class="card-title">${title}</div>
+      </div>
     `;
 
-    card.onclick = async () => {
-
-      if (!unlocked) return;
-
-      // charger fichier réel
-      const data = await fetch(ch.file).then(r => r.json());
-
-      save.currentChapter = data.chapter;
-      save.currentScene = 0;
-      saveGame(save);
-
-      window.location.href = "game.html";
-    };
+    if (unlocked) {
+      card.onclick = async () => {
+        try {
+          const data = await fetch(ch.file).then(r=>r.json());
+          save.currentChapter = data.chapter ?? num;
+          save.currentScene   = 0;
+          saveGame(save);
+        } catch {
+          save.currentChapter = num;
+          save.currentScene   = 0;
+          saveGame(save);
+        }
+        window.location.href = "game.html";
+      };
+    }
 
     grid.appendChild(card);
   });
+
+  lucide.createIcons();
 }
 
+function goBack() { window.location.href = "index.html"; }
 loadChapters();
-function goBack() {
-  window.location.href = "index.html";
-}
 </script>
-
 </body>
 </html>

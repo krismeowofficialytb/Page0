@@ -3,104 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game</title>
-
+<title>Game — Page 0</title>
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Rajdhani', sans-serif;
-}
+body { margin:0; overflow:hidden; font-family:'Rajdhani',sans-serif; }
 
 #bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5) contrast(1.1);
-  background: black;
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; filter:brightness(0.5) contrast(1.1); background:black;
 }
 
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at bottom,
-    rgba(0,0,0,0.25),
-    transparent 60%
-  );
+  position:absolute; inset:0;
+  background:radial-gradient(circle at bottom, rgba(0,0,0,0.25), transparent 60%);
 }
 
 .textbox {
-  background: rgba(20, 8, 10, 0.85);
-  border: 1px solid rgba(200, 60, 60, 0.4);
-  border-radius: 15px;
-  padding: 20px;
-  color: #e8d5c4;
+  background:rgba(20,8,10,0.85);
+  border:1px solid rgba(200,60,60,0.4);
+  border-radius:15px; padding:20px; color:#e8d5c4;
 }
 
-#text {
-  font-size: 18px;
-  line-height: 1.6;
-}
+#text { font-size:18px; line-height:1.6; }
 
 .choice-btn {
-  background: rgba(60,15,15,0.6);
-  border: 1px solid rgba(200,60,60,0.4);
-  color: #e8d5c4;
-  padding: 12px;
-  border-radius: 10px;
+  background:rgba(60,15,15,0.6);
+  border:1px solid rgba(200,60,60,0.4);
+  color:#e8d5c4; padding:12px; border-radius:10px;
+  cursor:pointer; width:100%; text-align:left;
+  font-family:'Rajdhani',sans-serif; font-size:16px;
+  transition:background 0.2s;
 }
-
-.choice-btn:hover {
-  background: rgba(120,20,20,0.7);
-}
+.choice-btn:hover { background:rgba(120,20,20,0.7); }
 
 .next-btn {
-  background: rgba(200,60,60,0.8);
-  color: #fff;
-  padding: 10px;
-  border-radius: 10px;
+  background:rgba(200,60,60,0.8);
+  color:#fff; padding:10px; border-radius:10px;
+  cursor:pointer; font-family:'Rajdhani',sans-serif;
+  font-size:15px; border:none; transition:background 0.2s;
 }
-#intro {
-  display: none;
-}
+.next-btn:hover { background:rgba(200,60,60,1); }
 
 .topbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  position:absolute; top:0; width:100%;
+  display:flex; justify-content:space-between; padding:10px;
 }
 
 .icon-btn {
-  background: rgba(20,8,10,0.7);
-  border: 1px solid rgba(200,60,60,0.4);
-  color: #e8d5c4;
-  padding: 6px 12px;
-  border-radius: 8px;
+  background:rgba(20,8,10,0.7);
+  border:1px solid rgba(200,60,60,0.4);
+  color:#e8d5c4; padding:6px 12px; border-radius:8px;
+  cursor:pointer; font-family:'Rajdhani',sans-serif; font-size:14px;
 }
-</style>
-</head>
 
+/* Chapter end overlay */
+#chapter-end {
+  display:none;
+  position:absolute; inset:0; z-index:50;
+  background:rgba(10,6,8,0.92);
+  backdrop-filter:blur(6px);
+  flex-direction:column; align-items:center; justify-content:center;
+  gap:20px; color:#e8d5c4; text-align:center; padding:40px;
+}
+#chapter-end h2 {
+  font-family:'Special Elite',cursive;
+  font-size:2rem; color:#c8524a;
+  text-shadow:0 0 20px rgba(200,50,50,0.4);
+}
+#chapter-end p { font-size:16px; opacity:0.75; letter-spacing:1px; }
+.end-btn {
+  background:rgba(60,15,15,0.4);
+  border:1px solid rgba(200,60,60,0.4);
+  color:#e8d5c4; padding:12px 28px; border-radius:10px;
+  cursor:pointer; font-family:'Rajdhani',sans-serif;
+  font-size:15px; letter-spacing:2px; text-transform:uppercase;
+  transition:all 0.25s;
+}
+.end-btn:hover { background:rgba(120,20,20,0.6); transform:scale(1.04); }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+</head>
 <body>
 
 <audio id="music"></audio>
-
-<img id="bg">
-
+<img id="bg" alt="">
 <div class="overlay"></div>
 
 <div class="topbar">
   <button class="icon-btn" onclick="goMenu()">← Menu</button>
-  <button class="icon-btn" onclick="saveGame()">Save</button>
+  <button class="icon-btn" onclick="saveProgress()">Save</button>
 </div>
 
 <div class="absolute bottom-0 w-full p-4 flex justify-center">
@@ -110,68 +102,95 @@ body {
   </div>
 </div>
 
-<script src="js/saveSystem.js"></script>
+<!-- CHAPTER END SCREEN -->
+<div id="chapter-end">
+  <h2 id="end-title">Chapter Complete</h2>
+  <p id="end-sub">You have reached the end of this chapter.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+    <button class="end-btn" onclick="goChapters()">📖 Chapters</button>
+    <button class="end-btn" onclick="goMenu()">🏠 Menu</button>
+  </div>
+</div>
 
 <script>
+// ── SAVE SYSTEM ──
+const SAVE_KEY = "otome_save_v1";
+function getDefaultSave() {
+  return { playerSeenIntro:false, unlockedChapters:[], currentChapter:1, currentScene:0 };
+}
+function loadSave() {
+  const raw = localStorage.getItem(SAVE_KEY);
+  if (!raw) return getDefaultSave();
+  try { return JSON.parse(raw); }
+  catch { localStorage.removeItem(SAVE_KEY); return getDefaultSave(); }
+}
+function saveGame(data) { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); }
+
+/**
+ * Met à jour la progression ET débloque le chapitre suivant.
+ * À appeler quand le joueur termine un chapitre.
+ */
+function updateProgress(chapter, scene) {
+  let save = loadSave();
+  save.currentChapter = chapter;
+  save.currentScene   = scene;
+  // Débloque le chapitre actuel (pour qu'il soit visible dans chapters)
+  if (!save.unlockedChapters.includes(chapter)) {
+    save.unlockedChapters.push(chapter);
+  }
+  // Débloque le chapitre suivant
+  const next = chapter + 1;
+  if (!save.unlockedChapters.includes(next)) {
+    save.unlockedChapters.push(next);
+  }
+  saveGame(save);
+}
+
+// ── GAME STATE ──
 let data;
-let currentScene = 0;
+let currentScene   = 0;
 let currentChapter = 1;
 
 function typeWriter(text, el) {
   el.textContent = "";
   let i = 0;
-  const speed = 20;
-
   function write() {
-    if (i < text.length) {
-      el.textContent += text[i++];
-      setTimeout(write, speed);
-    }
+    if (i < text.length) { el.textContent += text[i++]; setTimeout(write, 20); }
   }
   write();
 }
 
 async function loadGame() {
+  const save = loadSave();
+  currentChapter = save.currentChapter || 1;
+  currentScene   = save.currentScene   || 0;
 
-  currentChapter = 1;
-  currentScene = 0;
-
-  const res = await fetch(`json/chapter${currentChapter}.json?nocache=` + Date.now());
-  data = await res.json();
-
-  showScene();
+  try {
+    const res = await fetch(`json/chapter${currentChapter}.json?nocache=`+Date.now());
+    data = await res.json();
+    showScene();
+  } catch(e) {
+    document.getElementById("text").textContent = "Error loading chapter data.";
+    console.error(e);
+  }
 }
 
 function showScene() {
   const scene = data.scenes[currentScene];
-
   typeWriter(scene.text, document.getElementById("text"));
 
-  // IMAGE FIX
+  // Background image
   const bg = document.getElementById("bg");
-  const imgPath = scene.background;
+  bg.src = scene.background || "";
 
-  bg.src = imgPath;
-
-  bg.onerror = () => {
-    console.log("Image introuvable :", imgPath);
-  };
-
-  // MUSIC FIX
+  // Music
   const music = document.getElementById("music");
-
-  if (scene.music) {
-    const musicPath = scene.music;
-
-    if (!music.src.includes(musicPath)) {
-      music.src = musicPath;
-      music.loop = true;
-      music.volume = 0.5;
-
-      music.play().catch(e => {
-        console.log("Audio bloqué:", e);
-      });
-    }
+  if (scene.music && !music.src.includes(scene.music)) {
+    music.src   = scene.music;
+    music.loop  = true;
+    music.volume = parseFloat(localStorage.getItem("volume") || 0.5);
+    if (localStorage.getItem("mute") === "true") music.muted = true;
+    music.play().catch(()=>{});
   }
 
   renderChoices(scene);
@@ -180,12 +199,30 @@ function showScene() {
 function nextScene() {
   currentScene++;
 
+  // Sauvegarde automatique de la progression
+  updateProgress(currentChapter, currentScene);
+
   if (currentScene >= data.scenes.length) {
-    alert("Chapitre terminé !");
+    // Fin du chapitre → on marque comme complété et on affiche l'écran de fin
+    finishChapter();
     return;
   }
 
   showScene();
+}
+
+function prevScene() {
+  if (currentScene > 0) { currentScene--; showScene(); }
+}
+
+function finishChapter() {
+  // updateProgress déjà appelé, le chapitre suivant est débloqué
+  const endEl = document.getElementById("chapter-end");
+  endEl.style.display = "flex";
+  document.getElementById("end-title").textContent =
+    `Chapter ${currentChapter} — Complete`;
+  document.getElementById("end-sub").textContent =
+    "The next chapter has been unlocked.";
 }
 
 function renderChoices(scene) {
@@ -193,53 +230,60 @@ function renderChoices(scene) {
   box.innerHTML = "";
 
   const nav = document.createElement("div");
-  nav.style.display = "flex";
-  nav.style.gap = "10px";
+  nav.style.cssText = "display:flex;gap:10px;";
 
-  // PREVIOUS
   const prev = document.createElement("button");
   prev.textContent = "⬅ Prev";
-  prev.className = "choice-btn";
-  prev.onclick = prevScene;
+  prev.className   = "choice-btn";
+  prev.onclick     = prevScene;
+  if (currentScene === 0) prev.style.opacity = "0.4";
 
-  // NEXT
   const next = document.createElement("button");
   next.textContent = "Next ➜";
-  next.className = "next-btn";
-  next.onclick = nextScene;
+  next.className   = "next-btn";
+  next.onclick     = nextScene;
 
   nav.appendChild(prev);
   nav.appendChild(next);
-
   box.appendChild(nav);
 
-  // choices si existants
   if (scene.choices && scene.choices.length > 0) {
     scene.choices.forEach(c => {
       const btn = document.createElement("button");
       btn.textContent = c.label;
-      btn.className = "choice-btn";
-      btn.onclick = nextScene;
+      btn.className   = "choice-btn";
+      btn.onclick     = () => {
+        // Si le choix a une scène cible, aller dessus
+        if (c.nextScene !== undefined) {
+          currentScene = c.nextScene;
+        } else {
+          nextScene();
+        }
+        showScene();
+      };
       box.appendChild(btn);
     });
   }
 }
-function prevScene() {
-  if (currentScene > 0) {
-    currentScene--;
-    showScene();
-  }
-}
-function goMenu() {
-  // retour SANS reloading intro
-  window.location.href = "index.html";
 
+function saveProgress() {
+  updateProgress(currentChapter, currentScene);
+  // Petit feedback visuel
+  const btn = event.target;
+  btn.textContent = "Saved ✓";
+  setTimeout(()=>{ btn.textContent = "Save"; }, 1500);
+}
+
+function goMenu() {
   sessionStorage.setItem("introDone", "true");
+  window.location.href = "index.html";
+}
+
+function goChapters() {
+  window.location.href = "chapters.html";
 }
 
 window.onload = loadGame;
-
 </script>
-
 </body>
 </html>
