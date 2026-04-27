@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 0 — Game</title>
+<title>Le Livre de la Fin</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@300;400;600;700&family=Special+Elite&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <style>
+/* === STYLES (identiques à votre version) === */
 @keyframes fadeIn    {from{opacity:0}to{opacity:1}}
 @keyframes fadeOut   {from{opacity:1}to{opacity:0}}
 @keyframes slideUp   {from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
@@ -13,10 +14,6 @@
 @keyframes pulseGlow {
   0%,100%{box-shadow:0 0 8px rgba(200,50,50,0.3),inset 0 0 8px rgba(200,50,50,0.1)}
   50%{box-shadow:0 0 20px rgba(200,50,50,0.5),inset 0 0 15px rgba(200,50,50,0.2)}
-}
-@keyframes glitchT {
-  0%,100%{transform:translate(0)}10%{transform:translate(-2px,1px)}
-  20%{transform:translate(2px,-1px)}40%{transform:translate(-1px,-1px)}60%{transform:translate(0)}
 }
 @keyframes noiseShift{0%{background-position:0 0}100%{background-position:100% 100%}}
 @keyframes scanAnim  {0%{top:-10%}100%{top:110%}}
@@ -30,11 +27,10 @@
 @keyframes charL     {from{opacity:0;transform:translateX(-18px) scale(.97)}to{opacity:1;transform:translateX(0) scale(1)}}
 @keyframes charR     {from{opacity:0;transform:translateX(18px) scale(.97)}to{opacity:1;transform:translateX(0) scale(1)}}
 @keyframes spkSlide  {from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:translateX(0)}}
-@keyframes overlayIn {from{opacity:0}to{opacity:1}}
 @keyframes popIn     {0%{opacity:0;transform:translate(-50%,-50%) scale(.87)}70%{transform:translate(-50%,-50%) scale(1.03)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes shimmer   {0%{left:-100%}100%{left:200%}}
 @keyframes bgFade    {from{opacity:0}to{opacity:1}}
-@keyframes floatDeco {0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes backPop   {0%{transform:scale(1)}50%{transform:scale(.93)}100%{transform:scale(1)}}
 
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -47,7 +43,7 @@ button{cursor:pointer;font-family:'Rajdhani',sans-serif;border:none;background:n
 
 /* ── BACKGROUND ── */
 #bg-layer{position:absolute;inset:0;z-index:0;background:#0a0608}
-#bg-img,#bg-next{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(1) contrast(1) saturate(1)}
+#bg-img,#bg-next{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #bg-next{opacity:0;transition:opacity .8s ease}
 .g-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,6,8,.25) 0%,rgba(10,6,8,.05) 40%,rgba(10,6,8,.42) 70%,rgba(10,6,8,.86) 100%)}
 .noise{position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");animation:noiseShift .5s steps(10) infinite}
@@ -80,7 +76,29 @@ button{cursor:pointer;font-family:'Rajdhani',sans-serif;border:none;background:n
 
 /* ── DIALOG ── */
 #dialog-area{position:absolute;bottom:0;left:0;right:0;z-index:12;padding:0 60px 20px}
+#dialog-header{display:flex;align-items:flex-end;gap:10px;margin-bottom:0}
 #spk{display:inline-block;font-family:'Cinzel Decorative',serif;font-size:13px;letter-spacing:2px;color:var(--cream);background:var(--panel);border:1px solid var(--border);border-bottom:none;padding:5px 16px 7px;border-radius:8px 8px 0 0;min-width:80px;text-align:center;animation:spkSlide .3s ease;position:relative;z-index:1;text-shadow:0 0 12px rgba(200,50,50,.4)}
+
+#btn-back{
+  display:flex;align-items:center;gap:5px;
+  background:rgba(10,6,8,.65);
+  border:1px solid var(--border2);
+  border-bottom:none;
+  border-radius:8px 8px 0 0;
+  color:var(--cream);
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:5px 12px 7px;
+  backdrop-filter:blur(6px);
+  transition:all .2s;
+  opacity:.7;
+  position:relative;z-index:1;
+  margin-left:auto;
+}
+#btn-back:hover{background:rgba(80,20,20,.6);border-color:rgba(220,80,80,.5);opacity:1}
+#btn-back:active{animation:backPop .15s ease}
+#btn-back svg{width:12px;height:12px;stroke:var(--red);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+#btn-back.disabled{opacity:.2;pointer-events:none}
+
 #dbox{background:var(--panel);border:1px solid var(--border);border-radius:0 12px 12px 12px;padding:18px 22px 22px;backdrop-filter:blur(10px);position:relative;min-height:100px;cursor:pointer}
 #dtxt{font-family:'IM Fell English',serif;font-size:17px;line-height:1.65;color:var(--cream);letter-spacing:.02em}
 #dcursor{display:inline-block;width:2px;height:16px;background:var(--red);margin-left:3px;vertical-align:middle;animation:blink .8s infinite;opacity:0}
@@ -142,14 +160,24 @@ button{cursor:pointer;font-family:'Rajdhani',sans-serif;border:none;background:n
 #end-ov{position:fixed;inset:0;z-index:180;background:rgba(10,6,8,.94);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;text-align:center;padding:40px}
 #end-ov h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.2rem,3vw,2rem);color:var(--red);letter-spacing:3px;text-shadow:0 0 30px rgba(200,50,50,.4);animation:slideDown .6s ease}
 #end-ov p{font-family:'IM Fell English',serif;font-style:italic;font-size:15px;color:var(--cream);opacity:.75;animation:slideUp .6s .2s ease both}
-.ebtns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:slideUp .6s .4s ease both}
+#end-affinity{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;animation:slideUp .6s .3s ease both;margin-top:4px}
+.ea-item{display:flex;flex-direction:column;align-items:center;gap:6px;background:rgba(30,10,10,.6);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;min-width:80px}
+.ea-name{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.7}
+.ea-score{font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--red)}
+.ebtns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:slideUp .6s .5s ease both}
 .ebtn{padding:12px 28px;border-radius:10px;border:1px solid var(--border);color:var(--cream);background:rgba(60,15,15,.35);font-size:14px;letter-spacing:2px;text-transform:uppercase;transition:all .25s;animation:pulseGlow 4s ease-in-out infinite}
 .ebtn:hover{background:rgba(120,20,20,.6);transform:scale(1.04)}
+.ebtn.primary{background:rgba(200,82,74,.25);border-color:var(--red)}
+.ebtn.primary:hover{background:rgba(200,82,74,.5)}
+
+/* ── ENDING ── */
+#ending-ov{position:fixed;inset:0;z-index:190;background:rgba(10,6,8,.97);display:none;align-items:center;justify-content:center;flex-direction:column;gap:20px;text-align:center;padding:40px}
+#ending-ov .end-tag{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--red);animation:chSub 1s .3s ease both;opacity:0}
+#ending-ov h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,4vw,2.6rem);color:var(--cream);letter-spacing:.1em;text-shadow:0 0 40px rgba(200,50,50,.5);animation:chReveal 1.5s .7s ease both;opacity:0;max-width:600px}
+#ending-ov p{font-family:'IM Fell English',serif;font-style:italic;font-size:15px;color:var(--cream);opacity:0;animation:chSub 1s 1.8s ease both;max-width:480px;line-height:1.75}
 
 /* ── TOAST ── */
 #toast{position:fixed;top:68px;left:50%;transform:translateX(-50%);background:rgba(10,6,8,.93);border:1px solid var(--border);border-radius:8px;padding:7px 18px;font-size:12px;letter-spacing:2px;color:var(--cream);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);white-space:nowrap}
-
-/* ── MODE INDICATOR ── */
 #mode-ind{position:absolute;top:55px;left:50%;transform:translateX(-50%);z-index:14;font-family:'Rajdhani',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);background:rgba(10,6,8,.7);border:1px solid var(--border2);border-radius:4px;padding:3px 10px;display:none;backdrop-filter:blur(4px)}
 
 @media(max-width:600px){
@@ -164,14 +192,18 @@ button{cursor:pointer;font-family:'Rajdhani',sans-serif;border:none;background:n
 
 <!-- BACKGROUND -->
 <div id="bg-layer">
-  <img id="bg-img"  src="" alt="">
+  <img id="bg-img" src="" alt="">
   <img id="bg-next" src="" alt="">
+  <div class="g-overlay"></div>
+  <div class="noise"></div>
+  <div class="scan"></div>
+  <div class="vignette"></div>
 </div>
 
 <!-- CHAPTER INTRO -->
 <div id="ch-intro">
-  <div class="ci-tag"  id="ci-tag"></div>
-  <div class="ci-ttl"  id="ci-ttl"></div>
+  <div class="ci-tag" id="ci-tag"></div>
+  <div class="ci-ttl" id="ci-ttl"></div>
   <div class="ci-div"></div>
   <div class="ci-desc" id="ci-desc"></div>
   <div class="ci-notice" id="ci-notice"></div>
@@ -185,7 +217,7 @@ button{cursor:pointer;font-family:'Rajdhani',sans-serif;border:none;background:n
     <svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
     Pause
   </button>
-  <div id="top-title">Page 0</div>
+  <div id="top-title">Le Livre de la Fin</div>
   <div style="display:flex;gap:8px">
     <button class="tbtn" onclick="openHelp()">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -206,357 +238,531 @@ button{cursor:pointer;font-family:'Rajdhani',sans-serif;border:none;background:n
 <img id="char-c" src="" alt="" style="display:none">
 
 <!-- DIALOG -->
-<div id="dialog-area" onclick="onDialogClick()">
-  <div id="spk" style="display:none"></div>
-  <div id="dbox">
+<div id="dialog-area">
+  <div id="dialog-header">
+    <div id="spk" style="display:none"></div>
+    <button id="btn-back" class="disabled" onclick="prevScene()" title="Revenir au dialogue précédent">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Revenir
+    </button>
+  </div>
+  <div id="dbox" onclick="onDialogClick()">
     <span id="dtxt"></span><span id="dcursor"></span>
     <div id="narr">▼</div>
   </div>
 </div>
 
-<!-- CHOICES -->
 <div id="choices" style="display:none"></div>
 
-<!-- AUDIO -->
 <audio id="music" loop></audio>
 <audio id="sfx"></audio>
 
-<!-- PAUSE -->
 <div id="pause-ov">
   <div id="pause-p">
-    <h2>Paused</h2>
-    <button class="pbtn" onclick="closePause()">▶ Resume</button>
+    <h2>Pause</h2>
+    <button class="pbtn" onclick="closePause()">▶ Reprendre</button>
     <button class="pbtn" onclick="toggleAuto()">⟳ Auto Play</button>
-    <button class="pbtn" onclick="quickSave();closePause()">💾 Save Progress</button>
-    <button class="pbtn" onclick="askLeave('chapters')">📖 Chapter Select</button>
-    <button class="pbtn red" onclick="askLeave('menu')">🏠 Main Menu</button>
+    <button class="pbtn" onclick="quickSave();closePause()">💾 Sauvegarder</button>
+    <button class="pbtn" onclick="askLeave('chapters')">📖 Chapitres</button>
+    <button class="pbtn red" onclick="askLeave('menu')">🏠 Menu</button>
   </div>
 </div>
 
-<!-- SAVE CONFIRM -->
 <div id="save-ov">
   <div id="save-p">
-    <h3>Save before leaving?</h3>
-    <p>Your progress will be saved at the current scene.</p>
+    <h3>Sauvegarder avant de partir ?</h3>
+    <p>Ta progression sera sauvegardée à cette scène.</p>
     <div class="sbtns">
-      <button class="yes" id="sy">Save &amp; Leave</button>
-      <button class="no"  id="sn">Leave without saving</button>
+      <button class="yes" id="sy">Sauv. &amp; Partir</button>
+      <button class="no" id="sn">Partir sans sauv.</button>
     </div>
-    <button class="pbtn" style="margin-top:12px;font-size:11px" onclick="closeSaveOv()">Cancel</button>
+    <button class="pbtn" style="margin-top:12px;font-size:11px" onclick="closeSaveOv()">Annuler</button>
   </div>
 </div>
 
-<!-- HELP -->
 <div id="help-ov">
   <div id="help-p">
-    <h2>How to Play</h2>
-    <p class="h-tag">An otome experience inspired by Bungou Stray Dogs — as if the anime were a novel.</p>
+    <h2>Comment jouer</h2>
+    <p class="h-tag">Une expérience otome inspirée de Bungou Stray Dogs.</p>
     <div class="h-sec">
-      <h3>What is Page 0?</h3>
-      <p>You experience reimagined moments from the anime as an otome visual novel. Navigate the world of the Armed Detective Agency and build bonds with characters through your choices.</p>
+      <h3>Avancer dans l'histoire</h3>
+      <ul><li>Clique sur la <strong>boîte de dialogue</strong> pour avancer.</li><li>Cliquer pendant le texte le <strong>complète instantanément</strong>.</li><li>Utilise <strong>Espace / Entrée / →</strong> au clavier. ← ou le bouton <strong>Revenir</strong> pour reculer.</li><li>Appuie sur <strong>A</strong> pour le mode Auto.</li></ul>
     </div>
     <div class="h-sec">
-      <h3>Advancing the story</h3>
-      <ul>
-        <li>Click or tap the <strong>dialog box</strong> to advance to the next line.</li>
-        <li>Clicking while text is still typing will <strong>instantly complete</strong> the current line.</li>
-        <li>Use <strong>Space / Enter / →</strong> on keyboard. ← goes back one scene.</li>
-        <li>Press <strong>A</strong> to toggle Auto mode — the story advances automatically.</li>
-      </ul>
+      <h3>Choix &amp; Affinité</h3>
+      <ul><li>Tes choix influencent l'affinité avec chaque personnage.</li><li>Les jauges à gauche suivent tes relations en temps réel.</li><li>Atteindre <strong>100</strong> débloque la fin de ce personnage.</li></ul>
     </div>
     <div class="h-sec">
-      <h3>Choices &amp; Affection</h3>
-      <ul>
-        <li>Most choices offer <strong>3 options</strong>: one increases affection ❤️, one is neutral, one decreases it 💔.</li>
-        <li>The gauges on the left track your relationship with each love interest in real time.</li>
-        <li>Fill a gauge to <strong>100%</strong> to unlock that character's ending.</li>
-        <li>Multiple endings exist — your choices shape the story.</li>
-      </ul>
+      <h3>Fins possibles</h3>
+      <ul><li><strong>Bonne fin</strong> — une affinité à 100. Le Livre se referme.</li><li><strong>Mauvaise fin</strong> — une affinité à -100. Conséquences inconnues.</li><li><strong>Fin mystérieuse</strong> — aucun extrême. L'histoire recommence.</li></ul>
     </div>
     <div class="h-sec">
-      <h3>Chapter types</h3>
-      <ul>
-        <li><strong>Main chapters</strong> — the core story. Play in order.</li>
-        <li><strong>Special scenes</strong> — optional. Can earn bonus affection points.</li>
-        <li><strong>Bonus scenes</strong> — unlocked by high affection. Contain exclusive romantic CGs and moments.</li>
-      </ul>
+      <h3>Sauvegarde</h3>
+      <ul><li>Clique sur 💾 pour sauvegarder à tout moment.</li><li>La progression est stockée localement dans ton navigateur.</li></ul>
     </div>
-    <div class="h-sec">
-      <h3>Saving</h3>
-      <ul>
-        <li>Tap the 💾 icon to quick-save at any time.</li>
-        <li>You'll always be asked to save before leaving.</li>
-        <li>Progress is stored locally in your browser.</li>
-      </ul>
-    </div>
-    <button class="hclose" onclick="closeHelp()">Got it ✓</button>
+    <button class="hclose" onclick="closeHelp()">Compris ✓</button>
   </div>
 </div>
 
-<!-- CHAPTER END -->
 <div id="end-ov">
-  <h2 id="end-ttl">Chapter Complete</h2>
-  <p  id="end-sub">Your choices have been recorded.</p>
-  <div class="ebtns">
-    <button class="ebtn" onclick="goChapters()">📖 Chapters</button>
-    <button class="ebtn" onclick="goMenu()">🏠 Menu</button>
+  <h2 id="end-ttl">Chapitre terminé</h2>
+  <p id="end-sub">Tes choix ont été enregistrés.</p>
+  <div id="end-affinity"></div>
+  <div class="ebtns" id="end-btns"></div>
+</div>
+
+<div id="ending-ov">
+  <div class="end-tag" id="ending-tag">✦ Fin</div>
+  <h1 id="ending-title"></h1>
+  <p id="ending-desc"></p>
+  <div class="ebtns" style="margin-top:20px;animation:chSub 1s 2.6s ease both;opacity:0">
+    <button class="ebtn" onclick="goMenu()">🏠 Menu principal</button>
   </div>
 </div>
 
-<!-- TOAST -->
 <div id="toast"></div>
 
 <script>
-/* ══ SAVE SYSTEM ══ */
-const SAVE_KEY = "otome_save_v1";
-function defaultSave(){return{playerSeenIntro:false,unlockedChapters:[],currentChapter:1,currentScene:0,affection:{}}}
-function loadSave(){
-  const r=localStorage.getItem(SAVE_KEY);
-  if(!r)return defaultSave();
-  try{const s=JSON.parse(r);if(!s.affection)s.affection={};return s;}
-  catch{localStorage.removeItem(SAVE_KEY);return defaultSave();}
+// Variables de session (pour les choix)
+let gameVars = {};
+
+// Fonction pour définir une variable (appelée par set_variable)
+function setGameVar(key, value) {
+  gameVars[key] = value;
 }
-function persistSave(){localStorage.setItem(SAVE_KEY,JSON.stringify(save))}
-function updateProgress(){
-  save.currentChapter=currentChapter;save.currentScene=currentScene;
-  if(!save.unlockedChapters.includes(currentChapter))save.unlockedChapters.push(currentChapter);
-  const nx=currentChapter+1;
-  if(!save.unlockedChapters.includes(nx))save.unlockedChapters.push(nx);
+
+// Fonction pour obtenir une variable
+function getGameVar(key, defaultValue = null) {
+  return gameVars.hasOwnProperty(key) ? gameVars[key] : defaultValue;
+}
+/* === SAUVEGARDE === */
+const SAVE_KEY = "otome_save_v2";
+function defaultSave() { return { unlockedChapters: [1], currentChapter: 1, currentSceneId: null, affection: {} }; }
+function loadSave() {
+  const r = localStorage.getItem(SAVE_KEY);
+  if (!r) return defaultSave();
+  try { const s = JSON.parse(r); if (!s.affection) s.affection = {}; return s; }
+  catch { localStorage.removeItem(SAVE_KEY); return defaultSave(); }
+}
+function persistSave() { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); }
+function updateProgress() {
+  save.currentChapter = currentChapter;
+  save.currentSceneId = currentSceneId;
+  if (!save.unlockedChapters.includes(currentChapter)) save.unlockedChapters.push(currentChapter);
   persistSave();
 }
 
-/* ══ STATE ══ */
-let chData=null,currentScene=0,currentChapter=1,save=loadSave();
-let isTyping=false,typeTimer=null,autoMode=false,autoTimer=null,pendingLeave=null,introSkip=false;
+/* === ÉTAT GLOBAL === */
+let chData = null;
+let currentChapter = 1;
+let currentSceneId = null;
+let sceneHistory = [];
+let save = loadSave();
 
-/* ══ AUDIO ══ */
-const music=document.getElementById("music");
-function applyVol(){music.volume=parseFloat(localStorage.getItem("volume")??0.5);music.muted=localStorage.getItem("mute")==="true"}
+let isTyping = false, typeTimer = null;
+let autoMode = false, autoTimer = null;
+let pendingLeave = null, introSkip = false;
+
+/* === AUDIO === */
+const musicEl = document.getElementById("music");
+function applyVol() {
+  musicEl.volume = parseFloat(localStorage.getItem("volume") ?? 0.5);
+  musicEl.muted = localStorage.getItem("mute") === "true";
+}
 applyVol();
-function playMusic(src){
-  if(!src)return;
-  const p=src.includes("/")?src:"music/"+src;
-  if(music.src.endsWith(p)&&!music.paused)return;
-  music.src=p;music.loop=true;applyVol();music.play().catch(()=>{});
+let lastMusicSrc = "";
+function playMusic(src) {
+  if (!src) return;
+  const p = src.includes("/") ? src : "music/" + src;
+  if (lastMusicSrc === p && !musicEl.paused) return;
+  lastMusicSrc = p;
+  musicEl.src = p; musicEl.loop = true; applyVol(); musicEl.play().catch(() => {});
 }
 
-/* ══ BACKGROUND CROSSFADE ══ */
-function setBg(src){
-  if(!src)return;
-  const p=src.includes("/")?src:"images/backgrounds/"+src;
-  const cur=document.getElementById("bg-img"),nxt=document.getElementById("bg-next");
-  if(cur.getAttribute("data-src")===p)return;
-  nxt.src=p;nxt.style.opacity="0";
-  nxt.onload=()=>{
-    nxt.style.transition="opacity .8s ease";nxt.style.opacity="1";
-    setTimeout(()=>{cur.src=p;cur.setAttribute("data-src",p);nxt.style.opacity="0";nxt.style.transition="none";},860);
+/* === BACKGROUND === */
+let lastBg = "";
+function setBg(src) {
+  if (!src) return;
+  const p = src.includes("/") ? src : "images/backgrounds/" + src;
+  if (lastBg === p) return;
+  lastBg = p;
+  const cur = document.getElementById("bg-img"), nxt = document.getElementById("bg-next");
+  nxt.src = p; nxt.style.opacity = "0";
+  nxt.onload = () => {
+    nxt.style.transition = "opacity .8s ease"; nxt.style.opacity = "1";
+    setTimeout(() => { cur.src = p; nxt.style.opacity = "0"; nxt.style.transition = "none"; }, 860);
   };
 }
 
-/* ══ CHARACTERS ══ */
-function setChars(scene){
-  ["char-l","char-r","char-c"].forEach(id=>{const e=document.getElementById(id);e.style.display="none";e.src="";});
-  if(!scene.character)return;
-  if(typeof scene.character==="string"){
-    const e=document.getElementById("char-c");
-    e.src="images/characters/"+scene.character;e.style.display="block";
-    e.style.animation="none";e.offsetHeight;e.style.animation="";
-  }else{
-    if(scene.character.left){const e=document.getElementById("char-l");e.src="images/characters/"+scene.character.left;e.style.display="block";}
-    if(scene.character.right){const e=document.getElementById("char-r");e.src="images/characters/"+scene.character.right;e.style.display="block";}
+/* === PERSONNAGES === */
+function setChars(scene) {
+  ["char-l", "char-r", "char-c"].forEach(id => {
+    const e = document.getElementById(id); e.style.display = "none"; e.src = "";
+  });
+  if (!scene.character || scene.character === "null") return;
+  if (typeof scene.character === "string") {
+    const e = document.getElementById("char-c");
+    e.src = "images/characters/" + scene.character; e.style.display = "block";
+    e.style.animation = "none"; e.offsetHeight; e.style.animation = "";
+  } else {
+    if (scene.character.left) { const e = document.getElementById("char-l"); e.src = "images/characters/" + scene.character.left; e.style.display = "block"; }
+    if (scene.character.right) { const e = document.getElementById("char-r"); e.src = "images/characters/" + scene.character.right; e.style.display = "block"; }
   }
 }
 
-/* ══ GAUGES ══ */
-let lis=[];
-function initGauges(scenes){
-  const found={};
-  scenes.forEach(s=>{if(s.affection_target&&!found[s.affection_target])found[s.affection_target]=s.character_avatar||null;});
-  lis=Object.entries(found).map(([n,a])=>({name:n,avatar:a}));
+/* === JAUGES === */
+let liNames = [];
+
+function initGauges(scenesObj) {
+  const found = {};
+  (chData.love_interests || []).forEach(name => { found[name] = null; });
+  // Parcourir TOUTES les scènes (objet) pour trouver les affection_target
+  for (let sid in scenesObj) {
+    const s = scenesObj[sid];
+    if (s.choices) {
+      s.choices.forEach(c => {
+        if (c.affection_target && !found[c.affection_target]) found[c.affection_target] = null;
+      });
+    }
+  }
+  liNames = Object.keys(found);
   renderGauges();
 }
-function renderGauges(){
-  const p=document.getElementById("gauges");p.innerHTML="";
-  lis.forEach(li=>{
-    const v=Math.min(100,Math.max(0,save.affection[li.name]??0));
-    const item=document.createElement("div");item.className="g-item";item.dataset.n=li.name;
-    let ava;
-    if(li.avatar){ava=document.createElement("img");ava.src="images/characters/"+li.avatar;ava.className="g-ava";ava.onerror=()=>ava.replaceWith(mkPh(li.name));}
-    else ava=mkPh(li.name);
-    const wrap=document.createElement("div");wrap.className="g-bar";
-    const fill=document.createElement("div");fill.className="g-fill";fill.style.height=v+"%";fill.id="gf-"+li.name.replace(/\s/g,"_");
+
+function renderGauges() {
+  const container = document.getElementById("gauges"); container.innerHTML = "";
+  liNames.forEach(name => {
+    const v = Math.min(100, Math.max(0, save.affection[name] ?? 0));
+    const item = document.createElement("div"); item.className = "g-item";
+    const ava = document.createElement("div"); ava.className = "g-ava-ph"; ava.textContent = name.charAt(0).toUpperCase();
+    const wrap = document.createElement("div"); wrap.className = "g-bar";
+    const fill = document.createElement("div"); fill.className = "g-fill"; fill.style.height = v + "%";
     wrap.appendChild(fill);
-    const hrt=document.createElement("div");hrt.className="g-heart";hrt.id="gh-"+li.name.replace(/\s/g,"_");hrt.textContent=v>=100?"💖":v>=60?"❤️":v>=30?"🧡":"🤍";
-    const lbl=document.createElement("div");lbl.className="g-lbl";lbl.textContent=li.name.split(" ")[0];
-    item.append(ava,wrap,hrt,lbl);p.appendChild(item);
+    const heart = document.createElement("div"); heart.className = "g-heart";
+    heart.textContent = v >= 100 ? "💖" : v >= 60 ? "❤️" : v >= 30 ? "🧡" : "🤍";
+    const lbl = document.createElement("div"); lbl.className = "g-lbl"; lbl.textContent = name;
+    item.append(ava, wrap, heart, lbl);
+    container.appendChild(item);
   });
 }
-function mkPh(n){const d=document.createElement("div");d.className="g-ava-ph";d.textContent=n.charAt(0).toUpperCase();return d;}
-function applyAffection(target,delta){
-  if(!target||!delta)return;
-  save.affection[target]=Math.min(100,Math.max(0,(save.affection[target]??0)+delta));
+
+function applyAffection(target, delta) {
+  if (!target || delta === undefined) return;
+  save.affection[target] = Math.min(100, Math.max(-100, (save.affection[target] ?? 0) + delta));
   persistSave();
-  const sid=target.replace(/\s/g,"_");
-  const fill=document.getElementById("gf-"+sid),hrt=document.getElementById("gh-"+sid);
-  if(fill)fill.style.height=save.affection[target]+"%";
-  if(hrt){const v=save.affection[target];hrt.textContent=v>=100?"💖":v>=60?"❤️":v>=30?"🧡":"🤍";hrt.style.animation="none";hrt.offsetHeight;hrt.style.animation="heartPop .4s ease";}
-  showPointPopup(target,delta);
-  if(save.affection[target]>=100)showToast("❤️ "+target+"'s ending is now available!");
-}
-function showPointPopup(target,delta){
-  const sid=target.replace(/\s/g,"_");const fillEl=document.getElementById("gf-"+sid);if(!fillEl)return;
-  const rect=fillEl.getBoundingClientRect();
-  const pop=document.createElement("div");pop.className="pt-pop";
-  pop.textContent=(delta>0?"+":"")+delta;pop.style.color=delta>0?"#ff8080":"#80b0ff";
-  pop.style.left=(rect.left-8)+"px";pop.style.top=(rect.top-12)+"px";
-  document.body.appendChild(pop);setTimeout(()=>pop.remove(),1300);
+  const idx = liNames.indexOf(target);
+  if (idx !== -1) {
+    const items = document.querySelectorAll(".g-item");
+    if (items[idx]) {
+      const fill = items[idx].querySelector(".g-fill");
+      const heart = items[idx].querySelector(".g-heart");
+      if (fill) fill.style.height = Math.max(0, save.affection[target]) + "%";
+      if (heart) {
+        const v = save.affection[target];
+        heart.textContent = v >= 100 ? "💖" : v >= 60 ? "❤️" : v >= 30 ? "🧡" : "🤍";
+        heart.style.animation = "none"; heart.offsetHeight; heart.style.animation = "heartPop .4s ease";
+      }
+    }
+  }
+  showPointPopup(target, delta);
+  if (save.affection[target] >= 100) showToast("❤️ Fin de " + target + " débloquée !");
+  if (save.affection[target] <= -100) showToast("💔 Mauvaise fin déclenchée...");
 }
 
-/* ══ TYPEWRITER ══ */
-function typeWrite(text,el,speed,onDone){
-  clearTimeout(typeTimer);isTyping=true;el.textContent="";
-  document.getElementById("dcursor").style.opacity="1";
-  document.getElementById("narr").style.opacity="0";
-  let i=0;
-  function step(){
-    if(i<text.length){el.textContent+=text[i++];typeTimer=setTimeout(step,speed||18);}
-    else{isTyping=false;document.getElementById("dcursor").style.opacity="0";document.getElementById("narr").style.opacity="1";if(onDone)onDone();if(autoMode)startAutoTimer();}
+function showPointPopup(target, delta) {
+  const items = document.querySelectorAll(".g-item");
+  let rect = null;
+  for (let i = 0; i < items.length; i++) {
+    if (liNames[i] === target && items[i]) { rect = items[i].querySelector(".g-fill")?.getBoundingClientRect(); break; }
+  }
+  if (!rect) return;
+  const pop = document.createElement("div"); pop.className = "pt-pop";
+  pop.textContent = (delta > 0 ? "+" : "") + delta;
+  pop.style.color = delta > 0 ? "#ff8080" : "#80b0ff";
+  pop.style.left = (rect.left - 8) + "px"; pop.style.top = (rect.top - 12) + "px";
+  document.body.appendChild(pop); setTimeout(() => pop.remove(), 1300);
+}
+
+/* === TEXTE TAPÉ === */
+function typeWrite(text, el, speed, onDone) {
+  clearTimeout(typeTimer); isTyping = true; el.textContent = "";
+  document.getElementById("dcursor").style.opacity = "1";
+  document.getElementById("narr").style.opacity = "0";
+  let i = 0;
+  function step() {
+    if (i < text.length) { el.textContent += text[i++]; typeTimer = setTimeout(step, speed || 18); }
+    else {
+      isTyping = false;
+      document.getElementById("dcursor").style.opacity = "0";
+      document.getElementById("narr").style.opacity = "1";
+      if (onDone) onDone();
+      if (autoMode) startAutoTimer();
+    }
   }
   step();
 }
-function skipType(){
-  clearTimeout(typeTimer);const s=sceneNow();if(!s)return;
-  document.getElementById("dtxt").textContent=s.text;isTyping=false;
-  document.getElementById("dcursor").style.opacity="0";document.getElementById("narr").style.opacity="1";
-  if(autoMode)startAutoTimer();
+function skipType() {
+  clearTimeout(typeTimer);
+  const s = sceneNow(); if (!s) return;
+  document.getElementById("dtxt").textContent = s.text;
+  isTyping = false;
+  document.getElementById("dcursor").style.opacity = "0";
+  document.getElementById("narr").style.opacity = "1";
+  if (autoMode) startAutoTimer();
 }
 
-/* ══ SCENES ══ */
-function sceneNow(){return chData?.scenes?.[currentScene];}
-function showScene(){
-  const s=sceneNow();if(!s)return;
-  if(s.background)setBg(s.background);
-  if(s.music)playMusic(s.music);
+/* === SCÈNES === */
+function sceneNow() { return chData?.scenes?.[currentSceneId]; }
+
+function showScene() {
+  const s = sceneNow(); if (!s) { console.error("Scène introuvable:", currentSceneId); return; }
+  if (s.background) setBg(s.background);
+  if (s.music) playMusic(s.music);
   setChars(s);
-  const spk=document.getElementById("spk");
-  if(s.speaker){spk.textContent=s.speaker;spk.style.display="inline-block";spk.style.animation="none";spk.offsetHeight;spk.style.animation="";}
-  else spk.style.display="none";
-  document.getElementById("choices").style.display="none";
-  document.getElementById("choices").innerHTML="";
-  typeWrite(s.text,document.getElementById("dtxt"),18,()=>{
-    renderChoices(s);
-    updateProgress();
+  const spk = document.getElementById("spk");
+  if (s.speaker) { spk.textContent = s.speaker; spk.style.display = "inline-block"; spk.style.animation = "none"; spk.offsetHeight; spk.style.animation = ""; }
+  else { spk.style.display = "none"; }
+  document.getElementById("choices").style.display = "none";
+  document.getElementById("choices").innerHTML = "";
+  updateBackBtn();
+  
+  // Gérer le texte conditionnel
+  let displayText = s.text;
+  if (s.text_condition) {
+    const val = getGameVar(s.text_condition.var);
+    displayText = s.text_condition[val] || s.text_condition.default || s.text;
+  }
+  
+  typeWrite(displayText, document.getElementById("dtxt"), 18, () => {
+    if (s.choices && s.choices.length > 0) renderChoices(s);
+    else if (!s.next) finishChapter();
   });
+  updateProgress();
 }
-function renderChoices(s){
-  const area=document.getElementById("choices");area.innerHTML="";
-  if(!s.choices||s.choices.length===0){area.style.display="none";return;}
-  area.style.display="flex";area.style.animation="none";area.offsetHeight;area.style.animation="slideUp .4s ease both";
-  s.choices.forEach(c=>{
-    const btn=document.createElement("button");btn.className="cbtn";btn.textContent=c.label;
-    btn.onclick=()=>{
-      area.style.display="none";
-      if(c.affection_target&&c.affection_delta!==undefined)applyAffection(c.affection_target,c.affection_delta);
-      if(c.goto!==undefined){
-        const idx=typeof c.goto==="number"?c.goto:chData.scenes.findIndex(sc=>sc.id===c.goto);
-        if(idx>=0){currentScene=idx;showScene();return;}
+
+function updateBackBtn() {
+  const btn = document.getElementById("btn-back");
+  if (sceneHistory.length === 0) btn.classList.add("disabled");
+  else btn.classList.remove("disabled");
+}
+
+function renderChoices(s) {
+  const area = document.getElementById("choices"); area.innerHTML = "";
+  if (!s.choices || s.choices.length === 0) { area.style.display = "none"; return; }
+  area.style.display = "flex";
+  area.style.animation = "none"; area.offsetHeight; area.style.animation = "slideUp .4s ease both";
+  s.choices.forEach(c => {
+    if (!c.label) return;
+    const btn = document.createElement("button"); btn.className = "cbtn"; btn.textContent = c.label;
+    btn.onclick = () => {
+      area.style.display = "none";
+      // Appliquer set_variable si présent
+      if (c.set_variable) {
+        const [key, val] = c.set_variable.split("=");
+        setGameVar(key, val);
       }
-      nextScene();
+      if (c.affection_target && c.affection_delta !== undefined) applyAffection(c.affection_target, c.affection_delta);
+      sceneHistory.push(currentSceneId);
+      currentSceneId = c.next_scene;
+      showScene();
     };
     area.appendChild(btn);
   });
 }
-
-/* ══ NAVIGATION ══ */
-function onDialogClick(){
-  const choicesVisible=document.getElementById("choices").style.display!=="none"&&document.getElementById("choices").children.length>0;
-  if(choicesVisible)return;
-  if(isTyping){skipType();return;}
-  nextScene();
+function onDialogClick() {
+  const choicesVisible = document.getElementById("choices").style.display !== "none" && document.getElementById("choices").children.length > 0;
+  if (choicesVisible) return;
+  if (isTyping) { skipType(); return; }
+  const s = sceneNow(); if (!s) return;
+  if (s.next) {
+    clearAutoTimer();
+    sceneHistory.push(currentSceneId);
+    currentSceneId = s.next;
+    updateProgress();
+    showScene();
+  } else if (!s.choices || s.choices.length === 0) finishChapter();
 }
-function nextScene(){clearAutoTimer();currentScene++;updateProgress();if(currentScene>=chData.scenes.length){finishChapter();return;}showScene();}
-function prevScene(){clearAutoTimer();if(currentScene>0){currentScene--;showScene();}}
-function finishChapter(){
+
+function prevScene() {
+  if (sceneHistory.length === 0) return;
+  clearAutoTimer();
+  currentSceneId = sceneHistory.pop();
+  showScene();
+  showToast("◀ Retour");
+}
+
+/* === FIN DE CHAPITRE === */
+async function finishChapter() {
   updateProgress();
-  document.getElementById("end-ttl").textContent="Chapter "+currentChapter+" — Complete";
-  document.getElementById("end-sub").textContent="Your choices have been recorded. The next chapter has been unlocked.";
-  document.getElementById("end-ov").style.display="flex";
+  const nextChapter = currentChapter + 1;
+  let nextExists = false;
+  try { const r = await fetch("json/chapter" + nextChapter + ".json", { method: "HEAD" }); nextExists = r.ok; } catch {}
+  const affDiv = document.getElementById("end-affinity"); affDiv.innerHTML = "";
+  liNames.forEach(name => {
+    const v = save.affection[name] ?? 0;
+    const it = document.createElement("div"); it.className = "ea-item";
+    it.innerHTML = `<div class="ea-name">${name}</div><div class="ea-score">${v >= 0 ? "+" : ""}${v}</div>`;
+    affDiv.appendChild(it);
+  });
+  document.getElementById("end-ttl").textContent = "Chapitre " + currentChapter + " — Terminé";
+  document.getElementById("end-sub").textContent = nextExists ? "Tes choix ont été enregistrés. Le chapitre suivant est disponible." : "Tu as atteint la fin du dernier chapitre.";
+  const btnsDiv = document.getElementById("end-btns"); btnsDiv.innerHTML = "";
+  if (nextExists) {
+    const cont = document.createElement("button"); cont.className = "ebtn primary"; cont.textContent = "▶ Chapitre " + nextChapter;
+    cont.onclick = () => loadChapter(nextChapter);
+    btnsDiv.appendChild(cont);
+  } else {
+    const fin = document.createElement("button"); fin.className = "ebtn primary"; fin.textContent = "✦ Voir la fin"; fin.onclick = showEnding;
+    btnsDiv.appendChild(fin);
+  }
+  const ch = document.createElement("button"); ch.className = "ebtn"; ch.textContent = "📖 Chapitres"; ch.onclick = goChapters;
+  const mn = document.createElement("button"); mn.className = "ebtn"; mn.textContent = "🏠 Menu"; mn.onclick = goMenu;
+  btnsDiv.append(ch, mn);
+  document.getElementById("end-ov").style.display = "flex";
 }
 
-/* ══ AUTO ══ */
-function toggleAuto(){autoMode=!autoMode;const ind=document.getElementById("mode-ind");ind.textContent="AUTO";ind.style.display=autoMode?"block":"none";if(!autoMode)clearAutoTimer();else if(!isTyping)startAutoTimer();showToast(autoMode?"Auto ON":"Auto OFF");}
-function startAutoTimer(){clearAutoTimer();const d=(sceneNow()?.pause??1000)+800;autoTimer=setTimeout(()=>{const cv=document.getElementById("choices").style.display!=="none"&&document.getElementById("choices").children.length>0;if(!cv)nextScene();},d);}
-function clearAutoTimer(){if(autoTimer){clearTimeout(autoTimer);autoTimer=null;}}
-
-/* ══ CHAPTER INTRO ══ */
-function showIntro(data){
-  const el=document.getElementById("ch-intro");el.style.display="flex";el.style.opacity="1";
-  const tag=document.getElementById("ci-tag"),ttl=document.getElementById("ci-ttl"),desc=document.getElementById("ci-desc"),notice=document.getElementById("ci-notice"),fill=document.getElementById("ci-fill");
-  const t=(data.title||"").toLowerCase(),typ=data.type||"main";
-  if(t.includes("bonus")||typ==="bonus"){tag.textContent="✦ Bonus Scene";desc.textContent="This exclusive scene contains special romantic moments and CG illustrations.";}
-  else if(t.includes("special")||typ==="special"){tag.textContent="✦ Special Scene";desc.textContent="This is an optional scene. Completing it can earn bonus affection points.";notice.innerHTML="💡 <strong>Optional:</strong> Not required to progress — but your bonds may grow stronger.";notice.style.display="block";}
-  else{tag.textContent="✦ Chapter "+data.chapter;desc.textContent="";}
-  ttl.textContent=data.title||"Untitled";fill.style.width="0%";
-  let pct=0;const iv=setInterval(()=>{pct+=2;fill.style.width=pct+"%";if(pct>=100){clearInterval(iv);setTimeout(()=>{if(!introSkip)hideIntro();},200);}},40);
+async function loadChapter(n) {
+  document.getElementById("end-ov").style.display = "none";
+  try {
+    const res = await fetch("json/chapter" + n + ".json?v=" + Date.now());
+    chData = await res.json();
+    currentChapter = n;
+    currentSceneId = chData.start;
+    sceneHistory = [];
+    save.currentChapter = n; save.currentSceneId = currentSceneId;
+    if (!save.unlockedChapters.includes(n)) save.unlockedChapters.push(n);
+    persistSave();
+    document.getElementById("top-title").textContent = (chData.title || "").substring(0, 32);
+    //initGauges(chData.scenes || {});
+    introSkip = false;
+    showIntro(chData);
+    const wait = setInterval(() => {
+      if (document.getElementById("ch-intro").style.display === "none") { clearInterval(wait); showScene(); }
+    }, 80);
+  } catch(e) { showToast("Erreur: impossible de charger le chapitre " + n); console.error(e); }
 }
-function hideIntro(){
-  const el=document.getElementById("ch-intro");
-  el.style.transition="opacity .6s ease";el.style.opacity="0";
-  setTimeout(()=>{el.style.display="none";el.style.transition="";},620);
+
+/* === ENDINGS === */
+function showEnding() {
+  document.getElementById("end-ov").style.display = "none";
+  const ov = document.getElementById("ending-ov");
+  let best = null, bestScore = -Infinity, worst = null, worstScore = Infinity;
+  liNames.forEach(name => {
+    const v = save.affection[name] ?? 0;
+    if (v > bestScore) { bestScore = v; best = name; }
+    if (v < worstScore) { worstScore = v; worst = name; }
+  });
+  let tag, title, desc;
+  if (bestScore >= 100) {
+    tag = "✦ Bonne Fin"; title = best.charAt(0).toUpperCase() + best.slice(1) + " — La Plume Dorée"; desc = "Le Livre de la Fin brille d'une lumière dorée. Une page se referme. Une autre commence — celle que tu as choisie d'écrire.";
+  } else if (worstScore <= -100) {
+    tag = "✦ Mauvaise Fin"; title = worst.charAt(0).toUpperCase() + worst.slice(1) + " — La Plume Pourrie"; desc = "Le Livre de la Fin noircit. Quelque chose s'est brisé. Les mots disparaissent un à un, et l'obscurité prend leur place.";
+  } else {
+    tag = "✦ Fin Mystérieuse"; title = "Le Livre reste ouvert"; desc = "Aucun lien n'a atteint son terme. Le Livre te ramène au commencement. Peut-être qu'une autre version de cette histoire attend d'être écrite.";
+  }
+  document.getElementById("ending-tag").textContent = tag;
+  document.getElementById("ending-title").textContent = title;
+  document.getElementById("ending-desc").textContent = desc;
+  ov.style.display = "flex";
 }
-function skipIntro(){introSkip=true;document.getElementById("ch-intro").style.display="none";}
 
-/* ══ PAUSE ══ */
-function openPause(){document.getElementById("pause-ov").style.display="flex";}
-function closePause(){document.getElementById("pause-ov").style.display="none";}
+/* === INTRO === */
+function showIntro(data) {
+  const el = document.getElementById("ch-intro");
+  el.style.display = "flex"; el.style.opacity = "1";
+  document.getElementById("ci-tag").textContent = "✦ Chapitre " + data.chapter;
+  document.getElementById("ci-ttl").textContent = data.title || "Sans titre";
+  document.getElementById("ci-desc").textContent = "";
+  document.getElementById("ci-notice").style.display = "none";
+  const fill = document.getElementById("ci-fill");
+  fill.style.width = "0%";
+  let pct = 0;
+  const iv = setInterval(() => {
+    pct += 2; fill.style.width = pct + "%";
+    if (pct >= 100) { clearInterval(iv); setTimeout(() => { if (!introSkip) hideIntro(); }, 200); }
+  }, 40);
+}
+function hideIntro() {
+  const el = document.getElementById("ch-intro");
+  el.style.transition = "opacity .6s ease"; el.style.opacity = "0";
+  setTimeout(() => { el.style.display = "none"; el.style.transition = ""; }, 620);
+}
+function skipIntro() { introSkip = true; document.getElementById("ch-intro").style.display = "none"; }
 
-/* ══ SAVE CONFIRM ══ */
-function askLeave(dest){closePause();pendingLeave=dest;document.getElementById("save-ov").style.display="flex";document.getElementById("sy").onclick=()=>{quickSave();doLeave();};document.getElementById("sn").onclick=()=>{doLeave();};}
-function closeSaveOv(){document.getElementById("save-ov").style.display="none";pendingLeave=null;}
-function doLeave(){document.getElementById("save-ov").style.display="none";if(pendingLeave==="menu")goMenu();else goChapters();}
+/* === AUTO PLAY === */
+function toggleAuto() {
+  autoMode = !autoMode;
+  const ind = document.getElementById("mode-ind"); ind.textContent = "AUTO"; ind.style.display = autoMode ? "block" : "none";
+  if (!autoMode) clearAutoTimer(); else if (!isTyping) startAutoTimer();
+  showToast(autoMode ? "Auto ON" : "Auto OFF");
+}
+function startAutoTimer() {
+  clearAutoTimer();
+  const d = (sceneNow()?.pause ?? 1000) + 800;
+  autoTimer = setTimeout(() => {
+    const cv = document.getElementById("choices").style.display !== "none" && document.getElementById("choices").children.length > 0;
+    if (!cv) onDialogClick();
+  }, d);
+}
+function clearAutoTimer() { if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; } }
 
-/* ══ HELP ══ */
-function openHelp(){document.getElementById("help-ov").style.display="flex";}
-function closeHelp(){document.getElementById("help-ov").style.display="none";}
+/* === PAUSE / OVERLAYS === */
+function openPause() { document.getElementById("pause-ov").style.display = "flex"; }
+function closePause() { document.getElementById("pause-ov").style.display = "none"; }
+function askLeave(dest) {
+  closePause(); pendingLeave = dest;
+  document.getElementById("save-ov").style.display = "flex";
+  document.getElementById("sy").onclick = () => { quickSave(); doLeave(); };
+  document.getElementById("sn").onclick = () => { doLeave(); };
+}
+function closeSaveOv() { document.getElementById("save-ov").style.display = "none"; pendingLeave = null; }
+function doLeave() { document.getElementById("save-ov").style.display = "none"; if (pendingLeave === "menu") goMenu(); else goChapters(); }
+function openHelp() { document.getElementById("help-ov").style.display = "flex"; }
+function closeHelp() { document.getElementById("help-ov").style.display = "none"; }
 
-/* ══ SAVE ══ */
-function quickSave(){updateProgress();showToast("✓ Saved");}
+function quickSave() { updateProgress(); showToast("✓ Sauvegardé"); }
+function goMenu() { window.location.href = "index.html"; }
+function goChapters() { window.location.href = "chapters.html"; }
 
-/* ══ NAVIGATION ══ */
-function goMenu(){sessionStorage.setItem("introDone","true");window.location.href="index.html";}
-function goChapters(){window.location.href="chapters.html";}
+let toastT = null;
+function showToast(msg) {
+  const t = document.getElementById("toast"); t.textContent = msg; t.style.opacity = "1";
+  clearTimeout(toastT); toastT = setTimeout(() => { t.style.opacity = "0"; }, 2200);
+}
 
-/* ══ TOAST ══ */
-let toastT=null;
-function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.opacity="1";clearTimeout(toastT);toastT=setTimeout(()=>{t.style.opacity="0";},2200);}
-
-/* ══ KEYBOARD ══ */
-document.addEventListener("keydown",e=>{
-  if(document.getElementById("pause-ov").style.display==="flex"||document.getElementById("help-ov").style.display==="flex")return;
-  if(e.key===" "||e.key==="Enter"||e.key==="ArrowRight"){e.preventDefault();onDialogClick();}
-  if(e.key==="ArrowLeft"){e.preventDefault();prevScene();}
-  if(e.key==="Escape"){e.preventDefault();openPause();}
-  if(e.key==="a"||e.key==="A")toggleAuto();
-  if(e.key==="s"||e.key==="S")quickSave();
+/* === CLAVIER === */
+document.addEventListener("keydown", e => {
+  if (document.getElementById("pause-ov").style.display === "flex" || document.getElementById("help-ov").style.display === "flex") return;
+  if (e.key === " " || e.key === "Enter" || e.key === "ArrowRight") { e.preventDefault(); onDialogClick(); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); prevScene(); }
+  if (e.key === "Escape") { e.preventDefault(); openPause(); }
+  if (e.key === "a" || e.key === "A") toggleAuto();
+  if (e.key === "s" || e.key === "S") quickSave();
 });
 
-/* ══ INIT ══ */
-async function init(){
-  save=loadSave();currentChapter=save.currentChapter||1;currentScene=save.currentScene||0;
-  try{
-    const res=await fetch("json/chapter"+currentChapter+".json?v="+Date.now());
-    chData=await res.json();
-  }catch(e){document.getElementById("dtxt").textContent="Error loading chapter "+currentChapter+". Check your JSON files.";console.error(e);return;}
-  document.getElementById("top-title").textContent=(chData.title||"Page 0").substring(0,32);
-  initGauges(chData.scenes||[]);
-  introSkip=false;
+/* === INIT === */
+async function init() {
+  save = loadSave();
+  currentChapter = save.currentChapter || 1;
+  try {
+    const res = await fetch("json/chapter" + currentChapter + ".json?v=" + Date.now());
+    chData = await res.json();
+  } catch(e) {
+    document.getElementById("dtxt").textContent = "Erreur : impossible de charger chapter" + currentChapter + ".json";
+    console.error(e); return;
+  }
+  currentSceneId = save.currentSceneId && chData.scenes[save.currentSceneId] ? save.currentSceneId : chData.start;
+  sceneHistory = [];
+  document.getElementById("top-title").textContent = (chData.title || "Le Livre de la Fin").substring(0, 32);
+  //initGauges(chData.scenes || {});
+  introSkip = false;
   showIntro(chData);
-  const wait=setInterval(()=>{
-    if(document.getElementById("ch-intro").style.display==="none"){clearInterval(wait);showScene();}
-  },80);
+  const wait = setInterval(() => {
+    if (document.getElementById("ch-intro").style.display === "none") { clearInterval(wait); showScene(); }
+  }, 80);
 }
 
-window.addEventListener("load",init);
+window.addEventListener("load", init);
 </script>
 </body>
 </html>
