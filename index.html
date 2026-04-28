@@ -421,17 +421,16 @@
   // =====================
   // SAVE SYSTEM (progression)
   // =====================
-  const SAVE_KEY = "otome_save_v1";
+const SAVE_KEY = "otome_save_v2";
 
-  function getDefaultSave() {
-    return {
-      playerSeenIntro: false,
-      unlockedChapters: [1],
-      currentChapter: 1,
-      currentScene: 0
-    };
-  }
-
+function getDefaultSave() {
+  return {
+    unlockedChapters: [1],
+    currentChapter: 1,
+    currentSceneId: null,
+    affection: {}
+  };
+}
   function loadSave() {
     const data = localStorage.getItem(SAVE_KEY);
     if (!data) return getDefaultSave();
