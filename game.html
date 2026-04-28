@@ -475,6 +475,26 @@ function skipType(){
 function sceneNow(){return chData?.scenes?.[currentSceneId];}
 function showScene(){
   const s=sceneNow();if(!s){console.error("Scène introuvable:",currentSceneId);return;}
+  // Dans showScene(), juste après avoir récupéré la scène s :
+if(s.minigame){
+  // Charger le mini-jeu via une iframe ou un div injecté
+  const mg=document.createElement('div');
+  mg.id='minigame-layer';
+  mg.style.cssText='position:fixed;inset:0;z-index:100;background:#0a0608';
+  mg.innerHTML=`<iframe src="minigames/${s.minigame}.html" style="width:100%;height:100%;border:none"></iframe>`;
+  document.body.appendChild(mg);
+  // Le mini-jeu poste un message postMessage pour continuer
+  window.addEventListener('message',function handler(e){
+    if(e.data?.type==='otome_goto'){
+      mg.remove();
+      window.removeEventListener('message',handler);
+      sceneHistory.push(currentSceneId);
+      currentSceneId=s.next;
+      showScene();
+    }
+  });
+  return; // ne pas afficher la dialog box normale
+}
   if(s.background)setBg(s.background);if(s.music)playMusic(s.music);setChars(s);
   const spk=document.getElementById("spk");
   if(s.speaker){spk.textContent=s.speaker;spk.style.display="inline-block";spk.style.animation="none";spk.offsetHeight;spk.style.animation="";}
@@ -512,14 +532,35 @@ function renderChoices(s){
     area.appendChild(btn);
   });
 }
-
 function onDialogClick(){
-  const choicesEl=document.getElementById("choices");
-  if(choicesEl.style.display!=="none"&&choicesEl.children.length>0)return;
-  if(isTyping){skipType();return;}
-  const s=sceneNow();if(!s)return;
-  if(s.next){clearAutoTimer();sceneHistory.push(currentSceneId);currentSceneId=s.next;updateProgress();showScene();}
-  else if(!s.choices||s.choices.length===0)finishChapter();
+  const choicesEl = document.getElementById("choices");
+  if (choicesEl.style.display !== "none" && choicesEl.children.length > 0) return;
+  if (isTyping) { skipType(); return; }
+  const s = sceneNow();
+  if (!s) return;
+  if (s.next) {
+    // Vérifie si la scène existe dans le chapitre courant
+    if (chData.scenes[s.next]) {
+      clearAutoTimer();
+      sceneHistory.push(currentSceneId);
+      currentSceneId = s.next;
+      updateProgress();
+      showScene();
+    } else {
+      // Essaie de parser "cX_sYY" pour en déduire le chapitre
+      const match = s.next.match(/^c(\d+)_s/);
+      if (match) {
+        const targetChapter = parseInt(match[1]);
+        if (targetChapter !== currentChapter) {
+          loadChapterAndScene(targetChapter, s.next);
+        } else {
+          showToast("Scène introuvable : " + s.next);
+        }
+      } else {
+        showToast("Scène introuvable : " + s.next);
+      }
+    }
+  }
 }
 function prevScene(){
   if(sceneHistory.length===0)return;
@@ -644,6 +685,30 @@ async function init(){
 }
 
 window.addEventListener("load",init);
+async function loadChapterAndScene(num, sceneId) {
+  try {
+    const res = await fetch("json/chapter"+num+".json?v="+Date.now());
+    const newCh = await res.json();
+    if (!newCh.scenes[sceneId]) throw new Error("Scène "+sceneId+" introuvable dans le chapitre "+num);
+    chData = newCh;
+    currentChapter = num;
+    currentSceneId = sceneId;
+    sceneHistory = [];
+    save.currentChapter = num;
+    save.currentSceneId = sceneId;
+    if (!save.unlockedChapters.includes(num)) save.unlockedChapters.push(num);
+    persistSave();
+    document.getElementById("top-title").textContent = (chData.title || "").substring(0,32);
+    initGauges(chData.scenes);
+    // Pas d'intro si on change en cours de route (optionnel)
+    introSkip = true;
+    document.getElementById("ch-intro").style.display = "none";
+    showScene();
+  } catch(e) {
+    console.error(e);
+    showToast("Erreur : impossible de charger le chapitre "+num);
+  }
+}
 </script>
 </body>
 </html>

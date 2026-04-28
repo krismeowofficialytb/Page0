@@ -853,7 +853,575 @@
   "speaker": null,
   "text": "",
   "minigame": "akh_dialog",
-  "next": "c2_s01"
-}
+  "next": "c1_s91"
+},
+"c1_s91_transition": {
+  "id": "c1_s91_transition",
+  "background": "void_book.jpg",
+  "character": null,
+  "speaker": null,
+  "text": "La lumière s'estompe. Le vide se referme comme une page qu'on tourne.",
+  "pause": 900,
+  "music": null,
+  "next": "c1_s91"
+},
+    "c1_s92": {
+      "id": "c1_s92",
+      "background": "agency_infirmary.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Atsushi ouvre les yeux. Sur la table de chevet, le livre noir est posé, fermé. À côté de lui, Dazai, Kunikida et Ranpo sont là. Dazai a une compresse sur la tempe. Kunikida frotte ses lunettes. Ranpo mange un bonbon, l'air pensif.",
+      "pause": 800,
+      "music": null,
+      "next": "c1_s93"
+    },
+    "c1_s93": {
+      "id": "c1_s93",
+      "background": "agency_infirmary.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Ah, te voilà réveillé ! Tu as perdu connaissance dans l'entrepôt. On t'a ramené.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s94"
+    },
+    "c1_s94": {
+      "id": "c1_s94",
+      "background": "agency_infirmary.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "L'entrepôt… Kaito… Vous vous souvenez ?",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s95"
+    },
+    "c1_s95": {
+      "id": "c1_s95",
+      "background": "agency_infirmary.jpg",
+      "character": "kunikida_working.png",
+      "speaker": "Kunikida",
+      "text": "Souvenir de quoi ? On était en patrouille. Tu t'es évanoui. C'est tout.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s96"
+    },
+    "c1_s96": {
+      "id": "c1_s96",
+      "background": "agency_infirmary.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Vous avez oublié ? La mission, le livre, l'attaque –",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s97"
+    },
+    "c1_s97": {
+      "id": "c1_s97",
+      "background": "agency_infirmary.jpg",
+      "character": "ranpo_couch.png",
+      "speaker": "Ranpo",
+      "text": "On s'est réveillés par terre à côté de toi. Aucun souvenir des heures précédentes. Toi, tu tenais ce livre.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s98"
+    },
+    "c1_s98": {
+      "id": "c1_s98",
+      "background": "agency_infirmary.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Des pages blanches. Il n'y a rien.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s99"
+    },
+    "c1_s99": {
+      "id": "c1_s99",
+      "background": "agency_infirmary.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Blanches ?",
+      "pause": 300,
+      "music": null,
+      "next": "c1_s100"
+    },
+    "c1_s100": {
+      "id": "c1_s100",
+      "background": "agency_infirmary.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Il saisit le livre. À ses yeux, les pages sont pleines de texte – exactement ce qu'il a vu dans le vide. Il lit à voix haute les règles.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s101"
+    },
+    "c1_s101": {
+      "id": "c1_s101",
+      "background": "agency_infirmary.jpg",
+      "character": "kunikida_working.png",
+      "speaker": "Kunikida",
+      "text": "Nakajima, il n'y a rien. Tu délires.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s102"
+    },
+    "c1_s102": {
+      "id": "c1_s102",
+      "background": "agency_infirmary.jpg",
+      "character": "ranpo_couch.png",
+      "speaker": "Ranpo",
+      "text": "Mon génie me dit que tu es sincère. Mais je ne vois que du blanc.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s103"
+    },
+    "c1_s103": {
+      "id": "c1_s103",
+      "background": "agency_infirmary.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Atsushi comprend. Le livre n'est lisible que par lui. Kaito a effacé la mémoire des autres.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s104"
+    },
+    "c1_s104": {
+      "id": "c1_s104",
+      "background": "agency_infirmary.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Puis il les regarde – vraiment. Au-dessus de leurs têtes, des chiffres flottent en transparence : 0 pour Dazai, 0 pour Kunikida, 0 pour Ranpo.",
+      "pause": 700,
+      "music": null,
+      "next": "c1_s105"
+    },
+    "c1_s105": {
+      "id": "c1_s105",
+      "background": "agency_infirmary.jpg",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Les chiffres. C'est vrai. Je peux voir l'affinité. Tous à zéro. Un point de départ. Ni bon, ni mauvais.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s106"
+    },
+    "c1_s106": {
+      "id": "c1_s106",
+      "background": "agency_infirmary.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Atsushi est seul avec ses pensées. Il peut parler à chacun, tester sa vision, ou décider d'une stratégie.",
+      "pause": 600,
+      "music": null,
+      "choices": [
+        {
+          "label": "Je vais tout leur raconter, même s'ils ne me croient pas.",
+          "next_scene": "c1_s107_raconter"
+        },
+        {
+          "label": "Je vais garder le secret pour l'instant.",
+          "next_scene": "c1_s107_secret"
+        },
+        {
+          "label": "Je vais demander à Ranpo de m'aider en secret.",
+          "affection_target": "ranpo",
+          "affection_delta": 1,
+          "next_scene": "c1_s107_ranpo"
+        }
+      ]
+    },
+    "c1_s107_raconter": {
+      "id": "c1_s107_raconter",
+      "background": "agency_infirmary.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Je vais tout leur raconter, même s'ils ne me croient pas.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s108"
+    },
+    "c1_s107_secret": {
+      "id": "c1_s107_secret",
+      "background": "agency_infirmary.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Je vais garder le secret pour l'instant.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s108"
+    },
+    "c1_s107_ranpo": {
+      "id": "c1_s107_ranpo",
+      "background": "agency_infirmary.jpg",
+      "character": "ranpo_couch.png",
+      "speaker": "Ranpo",
+      "text": "Intéressant… Je vais enquêter de mon côté.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s108"
+    },
+    "c1_s108": {
+      "id": "c1_s108",
+      "background": "agency_hallway.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Sortant de l'infirmerie, Atsushi croise un employé, Tanaka. Il décide de tester sa vision.",
+      "pause": 500,
+      "music": null,
+      "choices": [
+        { "label": "Demander poliment des nouvelles.", "next_scene": "c1_s109_poli" },
+        { "label": "Aider Tanaka à porter des dossiers.", "next_scene": "c1_s109_aider" },
+        { "label": "Ne rien dire, observer discrètement.", "next_scene": "c1_s109_observer" }
+      ]
+    },
+    "c1_s109_poli": {
+      "id": "c1_s109_poli",
+      "background": "agency_hallway.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Bonjour Tanaka-san, comment allez-vous ?",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s110"
+    },
+    "c1_s109_aider": {
+      "id": "c1_s109_aider",
+      "background": "agency_hallway.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Laissez-moi vous aider avec ces dossiers.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s110"
+    },
+    "c1_s109_observer": {
+      "id": "c1_s109_observer",
+      "background": "agency_hallway.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Il observe discrètement, mais rien ne change.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s110"
+    },
+    "c1_s110": {
+      "id": "c1_s110",
+      "background": "agency_cafeteria_morning.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Retour à la cafétéria. Dazai est seul. Atsushi s'assoit.",
+      "pause": 500,
+      "music": null,
+      "choices": [
+        {
+          "label": "Dazai-san, vous avez déjà eu l'impression qu'on vous effaçait la mémoire ?",
+          "affection_target": "dazai",
+          "affection_delta": 2,
+          "next_scene": "c1_s111_dazai"
+        },
+        {
+          "label": "Racontez-moi une de vos histoires de suicide manqué.",
+          "next_scene": "c1_s111_suicide"
+        },
+        {
+          "label": "Je vais vous montrer le livre.",
+          "next_scene": "c1_s111_livre"
+        }
+      ]
+    },
+    "c1_s111_dazai": {
+      "id": "c1_s111_dazai",
+      "background": "agency_cafeteria_morning.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Parfois. Mais c'est un autre sujet.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s112"
+    },
+    "c1_s111_suicide": {
+      "id": "c1_s111_suicide",
+      "background": "agency_cafeteria_morning.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Ah, la dernière fois j'ai essayé de me noyer dans une flaque d'eau. C'était presque parfait.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s112"
+    },
+    "c1_s111_livre": {
+      "id": "c1_s111_livre",
+      "background": "agency_cafeteria_morning.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Toujours des pages blanches. Décidément.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s112"
+    },
+    "c1_s112": {
+      "id": "c1_s112",
+      "background": "agency_library.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Dans la bibliothèque, Atsushi cherche des infos sur Kaito.",
+      "pause": 500,
+      "music": null,
+      "choices": [
+        { "label": "Chercher seul.", "next_scene": "c1_s113_seul" },
+        {
+          "label": "Demander de l'aide à Kunikida.",
+          "affection_target": "kunikida",
+          "affection_delta": 1,
+          "next_scene": "c1_s113_kunikida"
+        },
+        {
+          "label": "Demander à Dazai.",
+          "affection_target": "dazai",
+          "affection_delta": 1,
+          "next_scene": "c1_s113_dazai"
+        }
+      ]
+    },
+    "c1_s113_seul": {
+      "id": "c1_s113_seul",
+      "background": "agency_library.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Archéologue disparu au Caire… Intéressant.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s114"
+    },
+    "c1_s113_kunikida": {
+      "id": "c1_s113_kunikida",
+      "background": "agency_library.jpg",
+      "character": "kunikida_working.png",
+      "speaker": "Kunikida",
+      "text": "Tiens, voilà des archives confidentielles. Ne les montre à personne.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s114"
+    },
+    "c1_s113_dazai": {
+      "id": "c1_s113_dazai",
+      "background": "agency_library.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Hmm, Kaito… Un nom égyptien. Tu devrais regarder du côté des antiquités volées.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s114"
+    },
+    "c1_s114": {
+      "id": "c1_s114",
+      "background": "atsushi_room_night.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Le soir, dans sa chambre, Atsushi ouvre le livre.",
+      "pause": 500,
+      "music": "soft_piano.mp3",
+      "choices": [
+        { "label": "Relire les règles.", "next_scene": "c1_s115_relire" },
+        { "label": "Écrire une note : « Atteindre 100 avec quelqu'un. »", "next_scene": "c1_s115_note" },
+        { "label": "Essayer de voir l'affinité sur lui-même devant un miroir.", "next_scene": "c1_s115_miroir" }
+      ]
+    },
+    "c1_s115_relire": {
+      "id": "c1_s115_relire",
+      "background": "atsushi_room_night.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Il relit chaque règle, les mémorisant par cœur.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s116"
+    },
+    "c1_s115_note": {
+      "id": "c1_s115_note",
+      "background": "atsushi_room_night.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Il écrit sur un carnet : « Atteindre 100 avec quelqu'un. »",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s116"
+    },
+    "c1_s115_miroir": {
+      "id": "c1_s115_miroir",
+      "background": "atsushi_room_night.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Il se regarde dans le miroir. Aucun chiffre n'apparaît.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s116"
+    },
+    "c1_s116": {
+      "id": "c1_s116",
+      "background": "agency_hallway_morning.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Le lendemain, Atsushi décide de passer du temps avec l'un des trois. Mais qui ?",
+      "pause": 500,
+      "music": null,
+      "choices": [
+        {
+          "label": "Passer la matinée avec Dazai.",
+          "affection_target": "dazai",
+          "affection_delta": 2,
+          "next_scene": "c1_s117_dazai"
+        },
+        {
+          "label": "Aider Kunikida à classer des dossiers.",
+          "affection_target": "kunikida",
+          "affection_delta": 2,
+          "next_scene": "c1_s117_kunikida"
+        },
+        {
+          "label": "Accompagner Ranpo sur une enquête mineure.",
+          "affection_target": "ranpo",
+          "affection_delta": 2,
+          "next_scene": "c1_s117_ranpo"
+        }
+      ]
+    },
+    "c1_s117_dazai": {
+      "id": "c1_s117_dazai",
+      "background": "yokohama_river.jpg",
+      "character": "dazai_casual.png",
+      "speaker": "Dazai",
+      "text": "Tu sais, Atsushi-kun, la rivière est calme aujourd'hui. C'est agréable. On devrait venir plus souvent.",
+      "pause": 600,
+      "music": "soft_piano.mp3",
+      "next": "c1_s118"
+    },
+    "c1_s117_kunikida": {
+      "id": "c1_s117_kunikida",
+      "background": "agency_office_morning.jpg",
+      "character": "kunikida_working.png",
+      "speaker": "Kunikida",
+      "text": "Merci pour ton aide, Nakajima. Tu es plus organisé que Dazai, c'est peu dire.",
+      "pause": 500,
+      "music": null,
+      "next": "c1_s118"
+    },
+    "c1_s117_ranpo": {
+      "id": "c1_s117_ranpo",
+      "background": "yokohama_street.jpg",
+      "character": "ranpo_couch.png",
+      "speaker": "Ranpo",
+      "text": "Tu vois ce détail ? C'est là qu'est la clé. Le génie, ça s'exerce.",
+      "pause": 600,
+      "music": null,
+      "next": "c1_s118"
+    },
+    "c1_s118": {
+      "id": "c1_s118",
+      "background": "agency_entrance.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Quelqu'un aborde Atsushi sur les marches de l'Agence. C'est Akutagawa.",
+      "pause": 600,
+      "music": "tension_low.mp3",
+      "choices": [
+        { "label": "Ignorer Akutagawa et entrer.", "next_scene": "c1_s119_ignorer" },
+        { "label": "Répondre poliment pour ne pas créer de conflit.", "next_scene": "c1_s119_poli" },
+        { "label": "Se montrer méfiant et agressif.", "next_scene": "c1_s119_agressif" }
+      ]
+    },
+    "c1_s119_ignorer": {
+      "id": "c1_s119_ignorer",
+      "background": "agency_entrance.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Il passe devant Akutagawa sans un mot.",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s120"
+    },
+    "c1_s119_poli": {
+      "id": "c1_s119_poli",
+      "background": "agency_entrance.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Bonjour Akutagawa. Puis-je t'aider ?",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s120"
+    },
+    "c1_s119_agressif": {
+      "id": "c1_s119_agressif",
+      "background": "agency_entrance.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": "Atsushi",
+      "text": "Que veux-tu, Akutagawa ?",
+      "pause": 400,
+      "music": null,
+      "next": "c1_s120"
+    },
+    "c1_s120": {
+      "id": "c1_s120",
+      "background": "atsushi_room_night.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Dernier choix du chapitre – Atsushi doit décider sur qui concentrer ses efforts pour les prochains jours.",
+      "pause": 600,
+      "music": "soft_piano.mp3",
+      "choices": [
+        {
+          "label": "Se concentrer sur Dazai.",
+          "affection_target": "dazai",
+          "affection_delta": 3,
+          "next_scene": "c1_fin"
+        },
+        {
+          "label": "Se concentrer sur Kunikida.",
+          "affection_target": "kunikida",
+          "affection_delta": 3,
+          "next_scene": "c1_fin"
+        },
+        {
+          "label": "Se concentrer sur Ranpo.",
+          "affection_target": "ranpo",
+          "affection_delta": 3,
+          "next_scene": "c1_fin"
+        },
+        {
+          "label": "Ne rien décider, laisser faire le hasard.",
+          "next_scene": "c1_fin"
+        }
+      ]
+    },
+    "c1_fin": {
+      "id": "c1_fin",
+      "background": "atsushi_room_night.jpg",
+      "character": "atsushi_casual.png",
+      "speaker": null,
+      "text": "Peu importe les choix, à la fin du chapitre, Atsushi pose le livre sur son lit. Il s'ouvre seul à une nouvelle page. Le texte s'écrit sous ses yeux, différemment selon ses affinités.",
+      "pause": 800,
+      "music": "ending_chapter.mp3",
+      "next": "c1_fin_text"
+    },
+    "c1_fin_text": {
+      "id": "c1_fin_text",
+      "background": "atsushi_room_night.jpg",
+      "character": null,
+      "speaker": "Le Livre",
+      "text": "Le livre s'ouvre sur une nouvelle page vierge. Les mots viendront.",
+      "pause": 1000,
+      "music": null,
+      "next": "c1_recap"
+    },
+    "c1_recap": {
+      "id": "c1_recap",
+      "background": "black.jpg",
+      "character": null,
+      "speaker": null,
+      "text": "Fin du Chapitre 1.",
+      "pause": 1200,
+      "music": null,
+      "next": null
+    }
   }
 }
