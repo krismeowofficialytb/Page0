@@ -1,10 +1,9 @@
 {
   "chapter": 1,
-  "title": "Le Livre de la Fin",
+  "title": "Mission : l'artefact volé",
   "type": "main",
   "thumbnail": "images/thumbnails/ch1.jpg",
   "start": "c1_s01",
-  "love_interests": ["dazai", "kunikida", "akutagawa", "ranpo"],
   "scenes": {
     "c1_s01": {
       "id": "c1_s01",
