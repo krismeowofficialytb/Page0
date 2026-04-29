@@ -2,7 +2,7 @@
   "chapter": 1,
   "title": "Mission : récuperer l'artefact",
   "type": "main",
-  "thumbnail": "images/thumbnails/ch1.jpg",
+  "thumbnail": "images/thumbnails/ch1.webp",
   "start": "c1_s01",
   "scenes": {
     "c1_s01": {
@@ -37,7 +37,7 @@
     },
     "c1_s04": {
       "id": "c1_s04",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Je descends l'escalier et pousse la porte de la cafétéria. La pièce est calme, presque vide à cette heure. Je repère immédiatement Dazai, déjà installé à sa table habituelle près de la fenêtre. Je me dirige vers lui et m'assois en face.",
@@ -47,7 +47,7 @@
     },
     "c1_s05": {
       "id": "c1_s05",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": "Atsushi",
       "text": "Bonjour Dazai-san.",
@@ -57,8 +57,8 @@
     },
     "c1_s06": {
       "id": "c1_s06",
-      "background": "cafetaria.png",
-      "character": "dazaicasual3.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual3.webp",
       "speaker": "Dazai",
       "text": "Bonjour Atsushi-kun. Tu es ponctuel, ce matin.",
       "pause": 500,
@@ -67,8 +67,8 @@
     },
     "c1_s07": {
       "id": "c1_s07",
-      "background": "cafetaria.png",
-      "character": "lucy.smile.png",
+      "background": "cafetaria.webp",
+      "character": "lucy.smile.webp",
       "speaker": null,
       "text": "Lucy sort de la cuisine, un plat à la main. Elle s'approche de notre table d'un pas pressé, l'air impatient.",
       "pause": 600,
@@ -77,8 +77,8 @@
     },
     "c1_s08": {
       "id": "c1_s08",
-      "background": "cafetaria.png",
-      "character": "lucyspeak.png",
+      "background": "cafetaria.webp",
+      "character": "lucyspeak.webp",
       "speaker": "Lucy",
       "text": "Qu'est-ce que je vous sert ? Dépêchez-vous, j'ai pas que ca à faire.",
       "pause": 500,
@@ -87,8 +87,8 @@
     },
     "c1_s09": {
       "id": "c1_s09",
-      "background": "cafetaria.png",
-      "character": "lucysmile.png",
+      "background": "cafetaria.webp",
+      "character": "lucysmile.webp",
       "speaker": "Atsushi",
       "text": "Bonjour Lucy. Juste un café, merci.",
       "pause": 400,
@@ -97,8 +97,8 @@
     },
     "c1_s10": {
       "id": "c1_s10",
-      "background": "cafetaria.png",
-      "character": "lucysmile.png",
+      "background": "cafetaria.webp",
+      "character": "lucysmile.webp",
       "speaker": null,
       "text": "Elle hoche la tête et se retourne, mais Dazai l'interrompt.",
       "pause": 400,
@@ -107,8 +107,8 @@
     },
         "c1_s11": {
       "id": "c1_s11",
-      "background": "cafetaria.png",
-      "character": "dazaicasual1.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual1.webp",
       "speaker": "Dazai",
       "text": "Au fait, Lucy… Maintenant que tu as fait la paix avec Atsushi, qu'est-ce qui te retient ici ?",
       "pause": 600,
@@ -117,8 +117,8 @@
     },
     "c1_s13": {
       "id": "c1_s13",
-      "background": "cafetaria.png",
-      "character": "lucyspeak.png",
+      "background": "cafetaria.webp",
+      "character": "lucyspeak.webp",
       "speaker": "Lucy",
       "text": "C'est compliqué… Disons que je n'ai pas vraiment d'autre endroit où aller.",
       "pause": 500,
@@ -127,8 +127,8 @@
     },
     "c1_s14": {
       "id": "c1_s14",
-      "background": "cafetaria.png",
-      "character": "dazaicasual1.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual1.webp",
       "speaker": "Dazai",
       "text": "Rien à voir avec le fait qu'Atsushi est là, tous les jours ?",
       "pause": 500,
@@ -137,8 +137,8 @@
     },
     "c1_s15": {
       "id": "c1_s15",
-      "background": "cafetaria.png",
-      "character": "lucyflush.png",
+      "background": "cafetaria.webp",
+      "character": "lucyflush.webp",
       "speaker": "Lucy",
       "text": "P… Pas du tout !",
       "pause": 400,
@@ -147,7 +147,7 @@
     },
     "c1_s16": {
       "id": "c1_s16",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Elle s'éloigne rapidement et disparaît dans la cuisine, la porte grinçant légèrement.",
@@ -157,7 +157,7 @@
     },
     "c1_s17": {
       "id": "c1_s17",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Je reste un instant silencieux, un peu perdu. Puis je me tourne vers la fenêtre.",
@@ -167,8 +167,8 @@
     },
     "c1_s18": {
       "id": "c1_s18",
-      "background": "cafetaria.png",
-      "character": "atsushi_casual.png",
+      "background": "cafetaria.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Tout est si calme ces derniers temps. Je me demande si ça va durer.",
       "pause": 500,
@@ -193,8 +193,8 @@
     },
     "c1_s18_pressentiment": {
       "id": "c1_s18_pressentiment",
-      "background": "cafetaria.png",
-      "character": "atsushi_casual.png",
+      "background": "cafetaria.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Dazai-san... j'ai un mauvais pressentiment. Comme si quelque chose allait arriver.",
       "pause": 500,
@@ -203,8 +203,8 @@
     },
     "c1_s18_pressentiment_b": {
       "id": "c1_s18_pressentiment_b",
-      "background": "cafetaria.png",
-      "character": "dazaicasual2.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual2.webp",
       "speaker": "Dazai",
       "text": "C'est normal d'avoir peur du calme, Atsushi-kun. Mais rappelle-toi : quoi qu'il arrive, tu ne seras pas seul.",
       "pause": 600,
@@ -213,8 +213,8 @@
     },
     "c1_s18_pressentiment_c": {
       "id": "c1_s18_pressentiment_c",
-      "background": "cafetaria.png",
-      "character": "atsushi_casual.png",
+      "background": "cafetaria.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Merci, Dazai-san.",
       "pause": 300,
@@ -223,8 +223,8 @@
     },
     "c1_s18_pressentiment_d": {
       "id": "c1_s18_pressentiment_d",
-      "background": "cafetaria.png",
-      "character": "dazaicasual1.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual1.webp",
       "speaker": "Dazai",
       "text": "Maintenant, finis ton café. Kunikida va bientôt arriver.",
       "pause": 500,
@@ -233,7 +233,7 @@
     },
     "c1_s18_rien": {
       "id": "c1_s18_rien",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Atsushi reste silencieux. Dazai le regarde un instant, puis détourne les yeux.",
@@ -243,8 +243,8 @@
     },
     "c1_s18_corde": {
       "id": "c1_s18_corde",
-      "background": "cafetaria.png",
-      "character": "atsushi_casual.png",
+      "background": "cafetaria.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Dazai-san... croyez-vous que ce calme va durer ?",
       "pause": 400,
@@ -253,8 +253,8 @@
     },
     "c1_s18_corde_b": {
       "id": "c1_s18_corde_b",
-      "background": "cafetaria.png",
-      "character": "dazaicasual2.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual2.webp",
       "speaker": "Dazai",
       "text": "Le calme, c'est comme une corde. On la tire, on la tire… et un jour, elle casse. La question, c'est de savoir qui tient l'autre bout.",
       "pause": 700,
@@ -263,7 +263,7 @@
     },
     "c1_s20": {
       "id": "c1_s20",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Soudainement, la porte de la rue s'ouvre. Kunikida entre, costume impeccable, carnet à la main, les traits tirés.",
@@ -273,8 +273,8 @@
     },
     "c1_s21": {
       "id": "c1_s21",
-      "background": "cafetaria.png",
-      "character": "kunikidaserious.png",
+      "background": "cafetaria.webp",
+      "character": "kunikidaserious.webp",
       "speaker": "Kunikida",
       "text": "Nakajima. Dazai. Réunion dans vingt minutes. Salle principale.",
       "pause": 500,
@@ -283,8 +283,8 @@
     },
     "c1_s22": {
       "id": "c1_s22",
-      "background": "cafetaria.png",
-      "character": "atsushi_casual.png",
+      "background": "cafetaria.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Il s'est passé quelque chose ?",
       "pause": 300,
@@ -293,8 +293,8 @@
     },
     "c1_s23": {
       "id": "c1_s23",
-      "background": "cafetaria.png",
-      "character": "kunikidaserious.png",
+      "background": "cafetaria.webp",
+      "character": "kunikidaserious.webp",
       "speaker": "Kunikida",
       "text": "Je vous expliquerai là-haut. Dépêchez-vous.",
       "pause": 400,
@@ -303,7 +303,7 @@
     },
     "c1_s24": {
       "id": "c1_s24",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Il ressort aussi sec. Dazai se lève, attrape sa veste.",
@@ -313,8 +313,8 @@
     },
     "c1_s25": {
       "id": "c1_s25",
-      "background": "cafetaria.png",
-      "character": "dazaicasual1.png",
+      "background": "cafetaria.webp",
+      "character": "dazaicasual1.webp",
       "speaker": "Dazai",
       "text_condition": {
         "var": "cafe_choice",
@@ -327,7 +327,7 @@
     },
     "c1_s26": {
       "id": "c1_s26",
-      "background": "cafetaria.png",
+      "background": "cafetaria.webp",
       "character": null,
       "speaker": null,
       "text": "Je bois ma dernière gorgée de café et me lève à mon tour.",
@@ -337,8 +337,8 @@
     },
     "c1_s28": {
       "id": "c1_s28",
-      "background": "salleprincipale.png",
-      "character": "ranposerious.png",
+      "background": "salleprincipale.webp",
+      "character": "ranposerious.webp",
       "speaker": null,
       "text": "Salle de réunion. Ranpo est déjà allongé sur le canapé, un sachet de chips à la main, les yeux fermés. Il n'a pas ouvert le paquet – signe que la situation est sérieuse.",
       "pause": 700,
@@ -347,8 +347,8 @@
     },
     "c1_s29": {
       "id": "c1_s29",
-     "background": "salleprincipale.png",
-      "character": "kunikidaglasses.png",
+     "background": "salleprincipale.webp",
+      "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "Quand je suis allé à la Division Spéciale de Surveillance des Capacitaires, on m'a confié une affaire que la police n'arrive pas à boucler.",
       "pause": 700,
@@ -357,8 +357,8 @@
     },
     "c1_s30": {
       "id": "c1_s30",
-      "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+      "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "La police ?",
       "pause": 300,
@@ -367,8 +367,8 @@
     },
     "c1_s31": {
       "id": "c1_s31",
-      "background": "salleprincipale.png",
-      "character": "kunikidaglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "Plusieurs enquêteurs sont allés sur le terrain ces deux dernières semaines. Tous sont revenus… incomplets.",
       "pause": 600,
@@ -377,8 +377,8 @@
     },
     "c1_s32": {
       "id": "c1_s32",
-      "background": "salleprincipale.png",
-      "character": "dazaithink.png",
+      "background": "salleprincipale.webp",
+      "character": "dazaithink.webp",
       "speaker": "Dazai",
       "text": "Incomplets ? Ils ont perdu un bras ? une jambe ? ",
       "pause": 400,
@@ -387,8 +387,8 @@
     },
     "c1_s33": {
       "id": "c1_s33",
-     "background": "salleprincipale.png",
-      "character": "kunikidaworking.png",
+     "background": "salleprincipale.webp",
+      "character": "kunikidaworking.webp",
       "speaker": "Kunikida",
       "text": "Leurs souvenirs. Ils ont perdu la mémoire des dernières heures de mission. Chaque fois. Proprement, comme effacée.",
       "pause": 700,
@@ -397,8 +397,8 @@
     },
     "c1_s34": {
       "id": "c1_s34",
-     "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+     "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Perdu la mémoire ?",
       "pause": 300,
@@ -407,8 +407,8 @@
     },
     "c1_s35": {
       "id": "c1_s35",
-    "background": "salleprincipale.png",
-      "character": "ranporead.png",
+    "background": "salleprincipale.webp",
+      "character": "ranporead.webp",
       "speaker": "Ranpo",
       "text": "Effacement ciblé. Pas d'amnésie générale. Juste la plage horaire précise de l'intervention.",
       "pause": 600,
@@ -417,8 +417,8 @@
     },
     "c1_s36": {
       "id": "c1_s36",
-     "background": "salleprincipale.png",
-      "character": "dazaithink.png",
+     "background": "salleprincipale.webp",
+      "character": "dazaithink.webp",
       "speaker": "Dazai",
       "text": "Donc soit une amnésie collective provoquée par un gaz ou une substance, soit un Capacitaire. Je penche pour la deuxième.",
       "pause": 600,
@@ -427,8 +427,8 @@
     },
     "c1_s37": {
       "id": "c1_s37",
-      "background": "salleprincipale.png",
-      "character": "ranposerious.png",
+      "background": "salleprincipale.webp",
+      "character": "ranposerious.webp",
       "speaker": "Ranpo",
       "text": "Moi aussi.",
       "pause": 300,
@@ -437,8 +437,8 @@
     },
     "c1_s38": {
       "id": "c1_s38",
-      "background": "salleprincipale.png",
-      "character": "kunikidaglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "Le suspect s'appelle Kaito. Ancien archéologue égyptien. Je n'ai trouvé que très peu d'informations sur lui – tout est vague. Il serait venu au Japon pour retrouver quelque chose. Un artefact maudit, scellé par les autorités, qu'il a volé il y a dix jours.",
       "pause": 800,
@@ -447,8 +447,8 @@
     },
     "c1_s39": {
       "id": "c1_s39",
-      "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+      "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Un artefact ? C'est quoi, exactement ?",
       "pause": 400,
@@ -457,8 +457,8 @@
     },
     "c1_s40": {
       "id": "c1_s40",
-     "background": "salleprincipale.png",
-      "character": "kunikidaworking.png",
+     "background": "salleprincipale.webp",
+      "character": "kunikidaworking.webp",
       "speaker": "Kunikida",
       "text": "Les archives ne le décrivent pas. Ils disent seulement que c'est trop dangereux pour être dévoilé. D'après quelques recoupements, ce serait un livre.",
       "pause": 700,
@@ -468,8 +468,8 @@
     
     "c1_s41": {
       "id": "c1_s41",
-     "background": "salleprincipale.png",
-      "character": "ranpothink.png",
+     "background": "salleprincipale.webp",
+      "character": "ranpothink.webp",
       "speaker": "Ranpo",
       "text": "Si on attaque frontalement, on risque de perdre nos souvenirs nous aussi. Il va falloir un plan.",
       "pause": 600,
@@ -479,8 +479,8 @@
 
      "c1_s42": {
       "id": "c1_s42",
-      "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+      "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Je vais faire quelque chose. Mais qu'est-ce qui serait le mieux ?",
       "pause": 500,
@@ -502,8 +502,8 @@
     },
     "c1_s43_option1": {
       "id": "c1_s43_option1",
-      "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+      "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Si je me cache assez près, je peux le prendre par surprise quand il sera concentré sur vous.",
       "pause": 600,
@@ -512,8 +512,8 @@
     },
     "c1_s44_option1": {
       "id": "c1_s44_option1",
-      "background": "salleprincipale.png",
-      "character": "dazaithink.png",
+      "background": "salleprincipale.webp",
+      "character": "dazaithink.webp",
       "speaker": "Dazai",
       "text": "Normalement, ce serait moi qui devrais me cacher pour annuler son pouvoir… mais tu es plus rapide, Atsushi-kun. Bien. On fait comme ça.",
       "pause": 700,
@@ -522,8 +522,8 @@
     },
     "c1_s45_option1": {
       "id": "c1_s45_option1",
-      "background": "salleprincipale.png",
-      "character": "ranpoglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "ranpoglasses.webp",
       "speaker": "Ranpo",
       "text": "Atsushi est effectivement plus rapide que toi, Dazai. Bonne idée. Mais ne prends pas de risques inutiles.",
       "pause": 600,
@@ -532,8 +532,8 @@
     },
     "c1_s46_option1": {
       "id": "c1_s46_option1",
-      "background": "salleprincipale.png",
-      "character": "kunikidaglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "D'accord. Alors Atsushi se cache, Dazai et moi faisons diversion. Ranpo, tu couvres la sortie arrière.",
       "pause": 700,
@@ -542,8 +542,8 @@
     },
     "c1_s47_option1": {
       "id": "c1_s47_option1",
-      "background": "salleprincipale.png",
-      "character": "ranposerious.png",
+      "background": "salleprincipale.webp",
+      "character": "ranposerious.webp",
       "speaker": "Ranpo",
       "text": "Compris. Tout le monde sait ce qu'il a à faire.",
       "pause": 400,
@@ -552,8 +552,8 @@
     },
     "c1_s43_option2": {
       "id": "c1_s43_option2",
-      "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+      "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Et si je prends le livre directement, pendant que vous faites diversion ?",
       "pause": 600,
@@ -562,8 +562,8 @@
     },
     "c1_s44_option2": {
       "id": "c1_s44_option2",
-      "background": "salleprincipale.png",
-      "character": "kunikidaworking.png",
+      "background": "salleprincipale.webp",
+      "character": "kunikidaworking.webp",
       "speaker": "Kunikida",
       "text": "C'est risqué, Nakajima. Mais je reconnais ton courage. Si tu te sens capable… vas-y.",
       "pause": 700,
@@ -572,8 +572,8 @@
     },
     "c1_s45_option2": {
       "id": "c1_s45_option2",
-      "background": "salleprincipale.png",
-      "character": "dazaicasual1.png",
+      "background": "salleprincipale.webp",
+      "character": "dazaicasual1.webp",
       "speaker": "Dazai",
       "text": "Nous ferons diversion pour te laisser le passage.",
       "pause": 700,
@@ -582,8 +582,8 @@
     },
     "c1_s46_option2": {
       "id": "c1_s46_option2",
-      "background": "salleprincipale.png",
-      "character": "ranpoglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "ranpoglasses.webp",
       "speaker": "Ranpo",
       "text": "Et moi, je couvre la sortie arrière.",
       "pause": 600,
@@ -592,8 +592,8 @@
     },
     "c1_s47_option2": {
       "id": "c1_s47_option2",
-      "background": "salleprincipale.png",
-      "character": "kunikidaglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "Alors c'est décidé. Atsushi attaque, on fait diversion. Restez concentrés.",
       "pause": 600,
@@ -602,8 +602,8 @@
     },
     "c1_s43_option3": {
       "id": "c1_s43_option3",
-      "background": "salleprincipale.png",
-      "character": "atsushi_casual.png",
+      "background": "salleprincipale.webp",
+      "character": "atsushi_casual.webp",
       "speaker": null,
       "text": "Je préfère ne rien tenter pour l'instant",
       "pause": 600,
@@ -612,8 +612,8 @@
     },
     "c1_s44_option3": {
       "id": "c1_s44_option3",
-      "background": "salleprincipale.png",
-      "character": "dazaicasual1.png",
+      "background": "salleprincipale.webp",
+      "character": "dazaicasual1.webp",
       "speaker": "Dazai",
       "text": "Je propose que l'un d'entre nous se cache pour éviter qu'on perde tous notre mémoire dans le pire des cas.",
       "pause": 600,
@@ -622,8 +622,8 @@
     },
     "c1_s45_option3": {
       "id": "c1_s45_option3",
-      "background": "salleprincipale.png",
-      "character": "kunikidaglasses.png",
+      "background": "salleprincipale.webp",
+      "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "Atsushi pourra faire l'affaire avec sa rapidité grâce à son habileté de tigre. Dazai et moi ferons diversion.",
       "pause": 700,
@@ -632,8 +632,8 @@
     },
     "c1_s46_option3": {
       "id": "c1_s46_option3",
-      "background": "salleprincipale.png",
-      "character": "ranposerious.png",
+      "background": "salleprincipale.webp",
+      "character": "ranposerious.webp",
       "speaker": "Ranpo",
       "text": "Je reste à l'arrière. Personne ne sort par là.",
       "pause": 500,
@@ -642,7 +642,7 @@
     },
     "c1_s55": {
       "id": "c1_s55",
-      "background": "salleprincipale.png",
+      "background": "salleprincipale.webp",
       "character": null,
       "speaker": null,
       "text": "L'équipe se lève et nous rejoignons le reste de l'équipe qui préparait déjà la voiture.",
@@ -653,7 +653,7 @@
   
   "c1_s56": {
     "id": "c1_s56",
-    "background": "warehouse.png",
+    "background": "warehouse.webp",
     "character": null,
     "speaker": null,
     "text": "Entrepôt 7, quartier des docks. Lumière grise, odeur de rouille. Je me suis faufilé par l'arrière et ai trouvé une cachette en hauteur, derrière une poutrelle.",
@@ -663,7 +663,7 @@
   },
   "c1_s57": {
     "id": "c1_s57",
-    "background": "warehouse.png",
+    "background": "warehouse.webp",
     "character": null,
     "speaker": null,
     "text": "Ça fait plusieurs minutes que je suis là. Bizarrement, je ne vois personne. L'entrepôt est immense, vide… jusqu'à ce que j'aperçoive une silhouette assise par terre, près d'une petite table.",
@@ -673,7 +673,7 @@
   },
   "c1_s58": {
     "id": "c1_s58",
-    "background": "warehouse.png",
+    "background": "warehouse.webp",
     "character":  null,
     "speaker": null,
     "text": "C'est probablement Kaito. jeune, aux cheveux noirs légèrement en bataille, avec des yeux vert émeraude.",
@@ -683,8 +683,8 @@
   },
   "c1_s59": {
     "id": "c1_s59",
-    "background": "warehouse.png",
-    "character":  "kaitospeak.png",
+    "background": "warehouse.webp",
+    "character":  "kaitospeak.webp",
     "speaker": "Kaito",
     "text": "Sesh em khet… ir sheta… hekau ta…",
     "pause": 800,
@@ -693,7 +693,7 @@
   },
   "c1_s60": {
     "id": "c1_s60",
-    "background": "warehouse.png",
+    "background": "warehouse.webp",
     "character": null,
     "speaker": "Atsushi",
     "text": "Je ne comprends pas un seul mot de ce qu'il murmure, mais c'est hypnotique. Ses doigts caressent la couverture du livre usé… Serait-ce le fameux artefact ?",
@@ -704,7 +704,7 @@
 
     "c1_s61": {
       "id": "c1_s61",
-     "background": "warehouse.png",
+     "background": "warehouse.webp",
       "character": null,
       "speaker": null,
       "text": "La porte principale grince. Dazai et Kunikida entrent.",
@@ -715,8 +715,8 @@
     
      "c1_s62": {
       "id": "c1_s62",
-      "background": "warehouse.png",
-      "character": "kaitosmile.png",
+      "background": "warehouse.webp",
+      "character": "kaitosmile.webp",
       "speaker": "Kaito",
       "text": "Encore des visiteurs. Je peux sentir d'ici les pouvoirs qui émanent de vous.",
       "pause": 500,
@@ -725,8 +725,8 @@
     },
     "c1_s63": {
       "id": "c1_s63",
-      "background": "warehouse.png",
-      "character": "kunikidaserious.png",
+      "background": "warehouse.webp",
+      "character": "kunikidaserious.webp",
       "speaker": "Kunikida",
       "text": "Vol, résistance, attaque sur la police… Vous êtes en état d'arrestation. Rendez le livre. Maintenant.",
       "pause": 500,
@@ -735,8 +735,8 @@
     },
     "c1_s64": {
       "id": "c1_s64",
-      "background": "warehouse.png",
-      "character": "kaitospeak.png",
+      "background": "warehouse.webp",
+      "character": "kaitospeak.webp",
       "speaker": "Kaito",
       "text": "Je ne le donnerai pas aussi facilement. Des années de recherches… Vous n'imaginez pas à quel point ce livre est inestimable…",
       "pause": 700,
@@ -745,8 +745,8 @@
     },
     "c1_s65": {
       "id": "c1_s65",
-      "background": "warehouse.png",
-      "character": "kunikidaserious.png",
+      "background": "warehouse.webp",
+      "character": "kunikidaserious.webp",
       "speaker": "Kunikida",
       "text": "Un livre qui a appartenu à Mérenrê II. Un pharaon qui courait après l'immortelle jeunesse.",
       "pause": 600,
@@ -755,8 +755,8 @@
     },
     "c1_s66": {
       "id": "c1_s66",
-      "background": "warehouse.png",
-      "character": "dazaisurprise.png",
+      "background": "warehouse.webp",
+      "character": "dazaisurprise.webp",
       "speaker": "Dazai",
       "text": "Comment je pourrais me suicider si je devenais immortel ? Non merci.",
       "pause": 500,
@@ -765,8 +765,8 @@
     },
     "c1_s67": {
       "id": "c1_s67",
-      "background": "warehouse.png",
-      "character": "kaitosmile.png",
+      "background": "warehouse.webp",
+      "character": "kaitosmile.webp",
       "speaker": "Kaito",
       "text": "Exact. Je deviendrai son détenteur et serai le seul être immortel.",
       "pause": 600,
@@ -775,8 +775,8 @@
     },
     "c1_s68": {
       "id": "c1_s68",
-      "background": "warehouse.png",
-      "character": "kunikidaserious.png",
+      "background": "warehouse.webp",
+      "character": "kunikidaserious.webp",
       "speaker": "Kunikida",
       "text": "Immortel ou pas, vous passerez vos années en prison.",
       "pause": 500,
@@ -786,8 +786,8 @@
   
    "c1_s69": {
   "id": "c1_s69",
-  "background": "warehouse.png",
-  "character": "dazaicasual1.png",
+  "background": "warehouse.webp",
+  "character": "dazaicasual1.webp",
   "speaker": "Dazai",
   "text": "Kunikida, il va falloir l'occuper. Je vais essayer d'annuler son pouvoir au contact.",
   "pause": 600,
@@ -796,8 +796,8 @@
 },
 "c1_s70": {
   "id": "c1_s70",
-  "background": "warehouse.png",
-  "character": "kunikidabattle.png",
+  "background": "warehouse.webp",
+  "character": "kunikidabattle.webp",
   "speaker": "Kunikida",
   "text": "Compris. Je fais diversion. Vas-y.",
   "pause": 500,
@@ -806,7 +806,7 @@
 },
 "c1_s71": {
   "id": "c1_s71",
-  "background": "warehouse.png",
+  "background": "warehouse.webp",
   "character": null,
   "speaker": null,
   "text": "Depuis ma cachette, je les observe avec inquiétude. Des filaments gris émanent des mains de Kaito. Ce pouvoir… il va falloir le tenir à distance.",
@@ -817,7 +817,7 @@
 },
     "c1_s72": {
       "id": "c1_s72",
-      "background": "warehouse.png",
+      "background": "warehouse.webp",
       "character": null,
       "speaker": null,
       "text": "Kaito se tourne vers la table où repose le livre. Il fait un pas. À cet instant, je bondit hors de ma cachette, transformation partielle. je fonce droit sur le livre.",
@@ -827,8 +827,8 @@
     },
     "c1_s73": {
       "id": "c1_s73",
-      "background": "warehouse.png",
-      "character": "kaitosurprise.png",
+      "background": "warehouse.webp",
+      "character": "kaitosurprise.webp",
       "speaker": "Kaito",
       "text": "Toi ?!",
       "pause": 300,
@@ -837,7 +837,7 @@
     },
     "c1_s74": {
       "id": "c1_s74",
-      "background": "warehouse.png",
+      "background": "warehouse.webp",
       "character": null,
       "speaker": null,
       "text": "j'attrape le livre. Une lumière aveuglante explose. Je ne vois plus rien",
@@ -847,7 +847,7 @@
     },
     "c1_s75": {
   "id": "c1_s75",
-  "background": "void_book.jpg",
+  "background": "void_book.webp",
   "character": null,
   "speaker": null,
   "text": "",
