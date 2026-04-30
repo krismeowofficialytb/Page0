@@ -1,0 +1,145 @@
+{
+  "scenes": {
+    "start": "porte_mafia_01",
+    "porte_mafia_01": {
+      "id": "porte_mafia_01",
+      "background": "agency_front.webp",
+      "character": null,
+      "speaker": "Kunikida",
+      "text": "N'y va pas, Atsushi. Tu n'as aucune raison de te rendre là-bas.",
+      "pause": 600,
+      "music": "serious.mp3",
+      "next": "porte_mafia_02"
+    },
+    "porte_mafia_02": {
+      "id": "porte_mafia_02",
+      "background": "agency_front.webp",
+      "character": "dazaicasual1.webp",
+      "speaker": "Dazai",
+      "text": "Kunikida a raison. Ils n'ont aucune raison de ne pas te tuer une fois arrivé.",
+      "pause": 600,
+      "music": "serious.mp3",
+      "next": "porte_mafia_03"
+    },
+    "porte_mafia_03": {
+      "id": "porte_mafia_03",
+      "background": "agency_front.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Je ne veux pas que vous ayez des problèmes à cause de moi.",
+      "pause": 500,
+      "music": "serious.mp3",
+      "next": "porte_mafia_04"
+    },
+    "porte_mafia_04": {
+      "id": "porte_mafia_04",
+      "background": "agency_front.webp",
+      "character": "chuuya.webp",
+      "speaker": "Chuuya",
+      "text": "Nous avons aussi besoin du livre. Sinon, nous ne partons pas d'ici.",
+      "pause": 600,
+      "music": "serious.mp3",
+      "next": "porte_mafia_05"
+    },
+    "porte_mafia_05": {
+      "id": "porte_mafia_05",
+      "background": "agency_front.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Je m'empresse aussitôt de prendre le livre là où l'agence l'a caché. Je pars sans me retourner. Les membres de l'agence ne peuvent pas m'en empêcher. Je m'éloigne d'un pas décisif.",
+      "pause": 800,
+      "music": "serious.mp3",
+      "next": "porte_mafia_06"
+    },
+    "porte_mafia_06": {
+      "id": "porte_mafia_06",
+      "background": "dark_room.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Ils m'emmènent dans une chambre sombre. Seules quelques bougies sur la table illuminent la pièce. Mori m'observe dans la pénombre.",
+      "pause": 800,
+      "music": "dark.mp3",
+      "next": "porte_mafia_07"
+    },
+    "porte_mafia_07": {
+      "id": "porte_mafia_07",
+      "background": "dark_room.webp",
+      "character": "mori.webp",
+      "speaker": "Mori",
+      "text": "Je n'aurais jamais imaginé que tu te rendrais de toi-même. Ce n'est pas vraiment toi qui nous intéresse, mais le pouvoir que tu as reçu du livre.",
+      "pause": 800,
+      "music": "dark.mp3",
+      "next": "porte_mafia_08"
+    },
+    "porte_mafia_08": {
+      "id": "porte_mafia_08",
+      "background": "dark_room.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Je suis surpris. Comment connaît-il ces propos ?",
+      "pause": 600,
+      "music": "dark.mp3",
+      "next": "porte_mafia_09"
+    },
+    "porte_mafia_09": {
+      "id": "porte_mafia_09",
+      "background": "dark_room.webp",
+      "character": "mori.webp",
+      "speaker": "Mori",
+      "text": "Le pouvoir que tu as reçu m'intéresse beaucoup. D'après nos recherches, si je veux devenir le nouveau détenteur, l'ancien doit laisser partir son âme.",
+      "pause": 800,
+      "music": "dark.mp3",
+      "next": "porte_mafia_10"
+    },
+    "porte_mafia_10": {
+      "id": "porte_mafia_10",
+      "background": "dark_room.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Quoi ?!",
+      "pause": 400,
+      "music": "dark.mp3",
+      "next": "porte_mafia_11"
+    },
+    "porte_mafia_11": {
+      "id": "porte_mafia_11",
+      "background": "dark_room.webp",
+      "character": null,
+      "speaker": null,
+      "text": "J'ai peur de comprendre.",
+      "pause": 500,
+      "music": "dark.mp3",
+      "next": "porte_mafia_12"
+    },
+    "porte_mafia_12": {
+      "id": "porte_mafia_12",
+      "background": "dark_room.webp",
+      "character": "mori.webp",
+      "speaker": "Mori",
+      "text": "Crois-moi, je ne le fais pas à cœur joie. Mais les sacrifices sont nécessaires.",
+      "pause": 700,
+      "music": "dark.mp3",
+      "next": "porte_mafia_13"
+    },
+    "porte_mafia_13": {
+      "id": "porte_mafia_13",
+      "background": "dark_room.webp",
+      "character": "mori.webp",
+      "speaker": null,
+      "text": "Mori sourit diaboliquement. Je sens quelque chose me transpercer par-derrière. Je n'ai pas eu le temps de savoir ce que c'était que je m'effondre.",
+      "pause": 1000,
+      "music": "dark.mp3",
+      "next": "porte_mafia_14"
+    },
+    "porte_mafia_14": {
+      "id": "porte_mafia_14",
+      "background": "black.webp",
+      "character": null,
+      "speaker": null,
+      "text": "BAD ENDING",
+      "pause": 1500,
+      "music": "dark.mp3",
+      "next": null
+    }
+  }
+}

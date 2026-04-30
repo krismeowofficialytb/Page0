@@ -1,0 +1,35 @@
+{
+  "scenes": {
+    "start": "ranpo_good_01",
+    "ranpo_good_01": {
+      "id": "ranpo_good_01",
+      "background": "infirmary.webp",
+      "character": "ranposerious.webp",
+      "speaker": "Atsushi",
+      "text": "Je suis désolé, Ranpo… je ne peux pas te le dire.",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "ranpo_good_02"
+    },
+    "ranpo_good_02": {
+      "id": "ranpo_good_02",
+      "background": "infirmary.webp",
+      "character": "ranpoglasses.webp",
+      "speaker": "Ranpo",
+      "text": "Je vois… Tu as tes raisons. Alors je ne te forcerai pas. Mais souviens-toi : je finirai toujours par découvrir la vérité. C'est mon métier.",
+      "pause": 800,
+      "music": "normal.mp3",
+      "next": "ranpo_good_03"
+    },
+    "ranpo_good_03": {
+      "id": "ranpo_good_03",
+      "background": "infirmary.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Merci, Ranpo.",
+      "pause": 500,
+      "music": "normal.mp3",
+      "next": null
+    }
+  }
+}

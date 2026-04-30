@@ -1,0 +1,44 @@
+{
+  "scenes": {
+    "start": "c2_dazai_burn",
+    "c2_dazai_burn": {
+      "id": "c2_dazai_burn",
+      "background": "library.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Brûlons le livre pour nous en débarrasser.",
+      "pause": 400,
+      "music": "serious.mp3",
+      "next": "c2_dazai_burn_b"
+    },
+    "c2_dazai_burn_b": {
+      "id": "c2_dazai_burn_b",
+      "background": "library.webp",
+      "character": "dazaicasual2.webp",
+      "speaker": "Dazai",
+      "text": "Je crois qu'on n'est pas les seuls à avoir essayé. Ce livre a des capacités magiques que le feu ne peut détruire.",
+      "pause": 700,
+      "music": "serious.mp3",
+      "choices": [
+        {
+          "label": "Je n'y ai pas pensé.",
+          "affection_target": "Dazai",
+          "affection_delta": -10,
+          "next_scene": "ending_dazai_bad.json"
+        },
+        {
+          "label": "Essayons pour en être sûr.",
+          "affection_target": "Dazai",
+          "affection_delta": -10,
+          "next_scene": "ending_dazai_bad.json"
+        },
+        {
+          "label": "Ne rien dire.",
+          "affection_target": "Dazai",
+          "affection_delta": -10,
+          "next_scene": "ending_dazai_bad.json"
+        }
+      ]
+    }
+  }
+}

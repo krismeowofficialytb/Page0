@@ -1,0 +1,48 @@
+{
+  "scenes": {
+    "start": "c2_combat_akutagawa",
+    "c2_combat_akutagawa": {
+      "id": "c2_combat_akutagawa",
+      "background": "agency_front.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Je ne veux pas en arriver là, mais l'agence ne restera pas les bras croisés si vous n'arrêtez pas maintenant.",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "next": "c2_combat_akutagawa_b"
+    },
+    "c2_combat_akutagawa_b": {
+      "id": "c2_combat_akutagawa_b",
+      "background": "agency_front.webp",
+      "character": "akutagawa.webp",
+      "speaker": "Akutagawa",
+      "text": "Tu as oublié que nous avons un combat qu'on s'est promis de faire ?",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "next": "c2_combat_akutagawa_c"
+    },
+    "c2_combat_akutagawa_c": {
+      "id": "c2_combat_akutagawa_c",
+      "background": "agency_front.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Je suis perplexe. Je ne savais pas qu'il tenait encore à ce combat après tout ce qu'on a traversé ensemble.",
+      "pause": 600,
+      "music": "confrontation.mp3",
+      "choices": [
+        {
+          "label": "Oui, j'y pense tout le temps.",
+          "affection_target": "Akutagawa",
+          "affection_delta": 20,
+          "next_scene": "ending_akutagawa_good.json"
+        },
+        {
+          "label": "Je n'ai jamais oublié.",
+          "affection_target": "Akutagawa",
+          "affection_delta": 10,
+          "next_scene": "ending_akutagawa_good.json"
+        }
+      ]
+    }
+  }
+}

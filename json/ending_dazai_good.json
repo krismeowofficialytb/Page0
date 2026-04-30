@@ -1,0 +1,74 @@
+{
+  "scenes": {
+    "start": "c2_dazai_help",
+    "c2_dazai_help": {
+      "id": "c2_dazai_help",
+      "background": "library.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Je peux faire confiance à Dazai. Il a dit que je ne serai jamais seul si j'ai des problèmes.",
+      "pause": 700,
+      "music": "normal.mp3",
+      "next": "c2_dazai_help_b"
+    },
+    "c2_dazai_help_b": {
+      "id": "c2_dazai_help_b",
+      "background": "library.webp",
+      "character": "dazaicasual1.webp",
+      "speaker": "Atsushi",
+      "text": "J'ai un moyen pour le sceller… Enfin, je ne sais pas comment le sceller complètement, mais je dois obtenir un Khepry blanc pour au moins m'en délivrer.",
+      "pause": 800,
+      "music": "normal.mp3",
+      "next": "c2_dazai_help_c"
+    },
+    "c2_dazai_help_c": {
+      "id": "c2_dazai_help_c",
+      "background": "library.webp",
+      "character": "dazaicasual2.webp",
+      "speaker": "Dazai",
+      "text": "T'en délivrer ?",
+      "pause": 400,
+      "music": "normal.mp3",
+      "next": "c2_dazai_help_d"
+    },
+    "c2_dazai_help_d": {
+      "id": "c2_dazai_help_d",
+      "background": "library.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Oui, je suis lié à ce livre. Je dois obtenir une affinité maximale.",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "c2_dazai_help_e"
+    },
+    "c2_dazai_help_e": {
+      "id": "c2_dazai_help_e",
+      "background": "library.webp",
+      "character": "dazaicasual1.webp",
+      "speaker": "Dazai",
+      "text": "Tu me choisis pour t'aider ?",
+      "pause": 500,
+      "music": "normal.mp3",
+      "choices": [
+        {
+          "label": "J'ai absolument besoin que tu m'aides, Dazai-san.",
+          "affection_target": "Dazai",
+          "affection_delta": 10,
+          "next_scene": "ending_dazai_good.json"
+        },
+        {
+          "label": "C'est exactement pour ça que je t'en parle.",
+          "affection_target": "Dazai",
+          "affection_delta": 10,
+          "next_scene": "ending_dazai_good.json"
+        },
+        {
+          "label": "Tu es celui en qui j'ai le plus confiance.",
+          "affection_target": "Dazai",
+          "affection_delta": 20,
+          "next_scene": "ending_dazai_good.json"
+        }
+      ]
+    }
+  }
+}

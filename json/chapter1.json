@@ -1,9 +1,33 @@
 {
-  "chapter": 1,
-  "title": "Mission : récuperer l'artefact",
-  "type": "main",
+  "chapter": 0,
+  "title": "Prologue",
+  "type": "prologue",
   "thumbnail": "images/thumbnails/ch1.webp",
   "start": "c1_s01",
+  "end": {
+    "background": "black.webp",
+    "music": "normal.mp3",
+    "title": "Fin du prologue",
+    "subtitle": "Chapitre 1 à venir…",
+    "menu": [
+      {
+        "label": "Extras",
+        "icon": "star",
+        "action": "goto_section",
+        "target": "extras"
+      },
+      {
+        "label": "Rejouer le prologue",
+        "icon": "replay",
+        "action": "restart_chapter"
+      },
+      {
+        "label": "Menu principal",
+        "icon": "home",
+        "action": "goto_main_menu"
+      }
+    ]
+  },
   "scenes": {
     "c1_s01": {
       "id": "c1_s01",
@@ -80,7 +104,7 @@
       "background": "cafetaria.webp",
       "character": "lucyspeak.webp",
       "speaker": "Lucy",
-      "text": "Qu'est-ce que je vous sert ? Dépêchez-vous, j'ai pas que ca à faire.",
+      "text": "Qu'est-ce que je vous sert ? Dépêchez-vous, j'ai pas que ça à faire.",
       "pause": 500,
       "music": "normal.mp3",
       "next": "c1_s09"
@@ -105,7 +129,7 @@
       "music": "normal.mp3",
       "next": "c1_s11"
     },
-        "c1_s11": {
+    "c1_s11": {
       "id": "c1_s11",
       "background": "cafetaria.webp",
       "character": "dazaicasual1.webp",
@@ -347,12 +371,12 @@
     },
     "c1_s29": {
       "id": "c1_s29",
-     "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "kunikidaglasses.webp",
       "speaker": "Kunikida",
       "text": "Quand je suis allé à la Division Spéciale de Surveillance des Capacitaires, on m'a confié une affaire que la police n'arrive pas à boucler.",
       "pause": 700,
-        "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s30"
     },
     "c1_s30": {
@@ -362,7 +386,7 @@
       "speaker": "Atsushi",
       "text": "La police ?",
       "pause": 300,
-       "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s31"
     },
     "c1_s31": {
@@ -380,14 +404,14 @@
       "background": "salleprincipale.webp",
       "character": "dazaithink.webp",
       "speaker": "Dazai",
-      "text": "Incomplets ? Ils ont perdu un bras ? une jambe ? ",
+      "text": "Incomplets ? Ils ont perdu un bras ? une jambe ?",
       "pause": 400,
-     "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s33"
     },
     "c1_s33": {
       "id": "c1_s33",
-     "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "kunikidaworking.webp",
       "speaker": "Kunikida",
       "text": "Leurs souvenirs. Ils ont perdu la mémoire des dernières heures de mission. Chaque fois. Proprement, comme effacée.",
@@ -397,17 +421,17 @@
     },
     "c1_s34": {
       "id": "c1_s34",
-     "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "atsushi_casual.webp",
       "speaker": "Atsushi",
       "text": "Perdu la mémoire ?",
       "pause": 300,
-       "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s35"
     },
     "c1_s35": {
       "id": "c1_s35",
-    "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "ranporead.webp",
       "speaker": "Ranpo",
       "text": "Effacement ciblé. Pas d'amnésie générale. Juste la plage horaire précise de l'intervention.",
@@ -417,12 +441,12 @@
     },
     "c1_s36": {
       "id": "c1_s36",
-     "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "dazaithink.webp",
       "speaker": "Dazai",
       "text": "Donc soit une amnésie collective provoquée par un gaz ou une substance, soit un Capacitaire. Je penche pour la deuxième.",
       "pause": 600,
-     "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s37"
     },
     "c1_s37": {
@@ -432,7 +456,7 @@
       "speaker": "Ranpo",
       "text": "Moi aussi.",
       "pause": 300,
-       "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s38"
     },
     "c1_s38": {
@@ -442,7 +466,7 @@
       "speaker": "Kunikida",
       "text": "Le suspect s'appelle Kaito. Ancien archéologue égyptien. Je n'ai trouvé que très peu d'informations sur lui – tout est vague. Il serait venu au Japon pour retrouver quelque chose. Un artefact maudit, scellé par les autorités, qu'il a volé il y a dix jours.",
       "pause": 800,
-     "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s39"
     },
     "c1_s39": {
@@ -452,12 +476,12 @@
       "speaker": "Atsushi",
       "text": "Un artefact ? C'est quoi, exactement ?",
       "pause": 400,
-     "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s40"
     },
     "c1_s40": {
       "id": "c1_s40",
-     "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "kunikidaworking.webp",
       "speaker": "Kunikida",
       "text": "Les archives ne le décrivent pas. Ils disent seulement que c'est trop dangereux pour être dévoilé. D'après quelques recoupements, ce serait un livre.",
@@ -465,19 +489,17 @@
       "music": "littletense.mp3",
       "next": "c1_s41"
     },
-    
     "c1_s41": {
       "id": "c1_s41",
-     "background": "salleprincipale.webp",
+      "background": "salleprincipale.webp",
       "character": "ranpothink.webp",
       "speaker": "Ranpo",
       "text": "Si on attaque frontalement, on risque de perdre nos souvenirs nous aussi. Il va falloir un plan.",
       "pause": 600,
-       "music": "littletense.mp3",
+      "music": "littletense.mp3",
       "next": "c1_s42"
     },
-
-     "c1_s42": {
+    "c1_s42": {
       "id": "c1_s42",
       "background": "salleprincipale.webp",
       "character": "atsushi_casual.webp",
@@ -488,14 +510,17 @@
       "choices": [
         {
           "label": "Je me cache et je le prends par surprise.",
+          "set_variable": "battle_choice=1",
           "next_scene": "c1_s43_option1"
         },
         {
           "label": "Je prends le livre directement.",
+          "set_variable": "battle_choice=2",
           "next_scene": "c1_s43_option2"
         },
         {
           "label": "Je ne fais rien pour l'instant, je suis le plan.",
+          "set_variable": "battle_choice=3",
           "next_scene": "c1_s43_option3"
         }
       ]
@@ -605,7 +630,7 @@
       "background": "salleprincipale.webp",
       "character": "atsushi_casual.webp",
       "speaker": null,
-      "text": "Je préfère ne rien tenter pour l'instant",
+      "text": "Je préfère ne rien tenter pour l'instant.",
       "pause": 600,
       "music": "littletense.mp3",
       "next": "c1_s44_option3"
@@ -650,70 +675,67 @@
       "music": "littletense.mp3",
       "next": "c1_s56"
     },
-  
-  "c1_s56": {
-    "id": "c1_s56",
-    "background": "warehouse.webp",
-    "character": null,
-    "speaker": null,
-    "text": "Entrepôt 7, quartier des docks. Lumière grise, odeur de rouille. Je me suis faufilé par l'arrière et ai trouvé une cachette en hauteur, derrière une poutrelle.",
-    "pause": 700,
-    "music": "confrontation.mp3",
-    "next": "c1_s57"
-  },
-  "c1_s57": {
-    "id": "c1_s57",
-    "background": "warehouse.webp",
-    "character": null,
-    "speaker": null,
-    "text": "Ça fait plusieurs minutes que je suis là. Bizarrement, je ne vois personne. L'entrepôt est immense, vide… jusqu'à ce que j'aperçoive une silhouette assise par terre, près d'une petite table.",
-    "pause": 700,
-    "music": "confrontation.mp3",
-    "next": "c1_s58"
-  },
-  "c1_s58": {
-    "id": "c1_s58",
-    "background": "warehouse.webp",
-    "character":  null,
-    "speaker": null,
-    "text": "C'est probablement Kaito. jeune, aux cheveux noirs légèrement en bataille, avec des yeux vert émeraude.",
-    "pause": 700,
-    "music": "confrontation.mp3",
-    "next": "c1_s59"
-  },
-  "c1_s59": {
-    "id": "c1_s59",
-    "background": "warehouse.webp",
-    "character":  "kaitospeak.webp",
-    "speaker": "Kaito",
-    "text": "Sesh em khet… ir sheta… hekau ta…",
-    "pause": 800,
-    "music": "confrontation.mp3",
-    "next": "c1_s60"
-  },
-  "c1_s60": {
-    "id": "c1_s60",
-    "background": "warehouse.webp",
-    "character": null,
-    "speaker": "Atsushi",
-    "text": "Je ne comprends pas un seul mot de ce qu'il murmure, mais c'est hypnotique. Ses doigts caressent la couverture du livre usé… Serait-ce le fameux artefact ?",
-    "pause": 700,
-    "music": "confrontation.mp3",
-    "next": "c1_s61"
-  },
-
+    "c1_s56": {
+      "id": "c1_s56",
+      "background": "warehouse.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Entrepôt 7, quartier des docks. Lumière grise, odeur de rouille. Je me suis faufilé par l'arrière et ai trouvé une cachette en hauteur, derrière une poutrelle.",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "next": "c1_s57"
+    },
+    "c1_s57": {
+      "id": "c1_s57",
+      "background": "warehouse.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Ça fait plusieurs minutes que je suis là. Bizarrement, je ne vois personne. L'entrepôt est immense, vide… jusqu'à ce que j'aperçoive une silhouette assise par terre, près d'une petite table.",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "next": "c1_s58"
+    },
+    "c1_s58": {
+      "id": "c1_s58",
+      "background": "warehouse.webp",
+      "character": null,
+      "speaker": null,
+      "text": "C'est probablement Kaito. Jeune, aux cheveux noirs légèrement en bataille, avec des yeux vert émeraude.",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "next": "c1_s59"
+    },
+    "c1_s59": {
+      "id": "c1_s59",
+      "background": "warehouse.webp",
+      "character": "kaitospeak.webp",
+      "speaker": "Kaito",
+      "text": "Sesh em khet… ir sheta… hekau ta…",
+      "pause": 800,
+      "music": "confrontation.mp3",
+      "next": "c1_s60"
+    },
+    "c1_s60": {
+      "id": "c1_s60",
+      "background": "warehouse.webp",
+      "character": null,
+      "speaker": "Atsushi",
+      "text": "Je ne comprends pas un seul mot de ce qu'il murmure, mais c'est hypnotique. Ses doigts caressent la couverture du livre usé… Serait-ce le fameux artefact ?",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "next": "c1_s61"
+    },
     "c1_s61": {
       "id": "c1_s61",
-     "background": "warehouse.webp",
+      "background": "warehouse.webp",
       "character": null,
       "speaker": null,
       "text": "La porte principale grince. Dazai et Kunikida entrent.",
       "pause": 400,
       "music": "confrontation.mp3",
       "next": "c1_s62"
-    },   
-    
-     "c1_s62": {
+    },
+    "c1_s62": {
       "id": "c1_s62",
       "background": "warehouse.webp",
       "character": "kaitosmile.webp",
@@ -758,7 +780,7 @@
       "background": "warehouse.webp",
       "character": "dazaisurprise.webp",
       "speaker": "Dazai",
-      "text": "Comment je pourrais me suicider si je devenais immortel ? Non merci.",
+      "text": "L'immortalité ? Quelle horreur. Je préfère encore rater ma prochaine tentative.",
       "pause": 500,
       "music": "confrontation.mp3",
       "next": "c1_s67"
@@ -783,44 +805,43 @@
       "music": "confrontation.mp3",
       "next": "c1_s69"
     },
-  
-   "c1_s69": {
-  "id": "c1_s69",
-  "background": "warehouse.webp",
-  "character": "dazaicasual1.webp",
-  "speaker": "Dazai",
-  "text": "Kunikida, il va falloir l'occuper. Je vais essayer d'annuler son pouvoir au contact.",
-  "pause": 600,
-  "music": "confrontation.mp3",
-  "next": "c1_s70"
-},
-"c1_s70": {
-  "id": "c1_s70",
-  "background": "warehouse.webp",
-  "character": "kunikidabattle.webp",
-  "speaker": "Kunikida",
-  "text": "Compris. Je fais diversion. Vas-y.",
-  "pause": 500,
-  "music": "confrontation.mp3",
-  "next": "c1_s71"
-},
-"c1_s71": {
-  "id": "c1_s71",
-  "background": "warehouse.webp",
-  "character": null,
-  "speaker": null,
-  "text": "Depuis ma cachette, je les observe avec inquiétude. Des filaments gris émanent des mains de Kaito. Ce pouvoir… il va falloir le tenir à distance.",
-  "pause": 700,
-  "music": "confrontation.mp3",
-  "minigame": "kaito_combat",
-  "next": "c1_s72"
-},
+    "c1_s69": {
+      "id": "c1_s69",
+      "background": "warehouse.webp",
+      "character": "dazaicasual1.webp",
+      "speaker": "Dazai",
+      "text": "Kunikida, il va falloir l'occuper. Je vais essayer d'annuler son pouvoir au contact.",
+      "pause": 600,
+      "music": "confrontation.mp3",
+      "next": "c1_s70"
+    },
+    "c1_s70": {
+      "id": "c1_s70",
+      "background": "warehouse.webp",
+      "character": "kunikidabattle.webp",
+      "speaker": "Kunikida",
+      "text": "Compris. Je fais diversion. Vas-y.",
+      "pause": 500,
+      "music": "confrontation.mp3",
+      "next": "c1_s71"
+    },
+    "c1_s71": {
+      "id": "c1_s71",
+      "background": "warehouse.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Depuis ma cachette, je les observe avec inquiétude. Des filaments gris émanent des mains de Kaito. Ce pouvoir… il va falloir le tenir à distance.",
+      "pause": 700,
+      "music": "confrontation.mp3",
+      "minigame": "kaito_combat",
+      "next": "c1_s72"
+    },
     "c1_s72": {
       "id": "c1_s72",
       "background": "warehouse.webp",
       "character": null,
       "speaker": null,
-      "text": "Kaito se tourne vers la table où repose le livre. Il fait un pas. À cet instant, je bondit hors de ma cachette, transformation partielle. je fonce droit sur le livre.",
+      "text": "Kaito se tourne vers la table où repose le livre. Il fait un pas. À cet instant, je bondis hors de ma cachette, transformation partielle. Je fonce droit sur le livre.",
       "pause": 600,
       "music": "confrontation.mp3",
       "next": "c1_s73"
@@ -840,19 +861,159 @@
       "background": "warehouse.webp",
       "character": null,
       "speaker": null,
-      "text": "j'attrape le livre. Une lumière aveuglante explose. Je ne vois plus rien",
+      "text": "J'attrape le livre. Une lumière aveuglante explose. Je ne vois plus rien.",
       "pause": 700,
       "music": "confrontation.mp3",
       "next": "c1_s75"
     },
     "c1_s75": {
-  "id": "c1_s75",
-  "background": "void_book.webp",
-  "character": null,
-  "speaker": null,
-  "text": "",
-  "minigame": "livre_de_merenre",
-  "next": "c2_s01"
-}
+      "id": "c1_s75",
+      "background": "void_book.webp",
+      "character": null,
+      "speaker": null,
+      "text": "",
+      "minigame": "livre_de_merenre",
+      "next": "c1_s76_infirmerie"
+    },
+    "c1_s76_infirmerie": {
+      "id": "c1_s76_infirmerie",
+      "background": "infirmary.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Une lumière tamisée éclaire l'infirmerie. J'ouvre les yeux péniblement. Ma tête tourne.",
+      "pause": 800,
+      "music": "normal.mp3",
+      "next": "c1_s77"
+    },
+    "c1_s77": {
+      "id": "c1_s77",
+      "background": "infirmary.webp",
+      "character": null,
+        "speaker": null,
+      "text": "… Où suis-je ? La lumière… le livre… Kaito… C'était un rêve ?",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "c1_s78"
+    },
+    "c1_s78": {
+      "id": "c1_s78",
+      "background": "infirmary.webp",
+      "character": "dazaicasual3.webp",
+      "speaker": "Dazai",
+      "text": "Ah, Atsushi-kun ! Tu nous as fait une belle peur. Tu es resté inconscient plusieurs heures.",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "c1_s79"
+    },
+    "c1_s79": {
+      "id": "c1_s79",
+      "background": "infirmary.webp",
+      "character": "kunikidaserious.webp",
+      "speaker": "Kunikida",
+      "text": "Yosano a dit qu'il n'y avait rien de grave, mais ne nous fais plus jamais ce coup-là.",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "c1_s80"
+    },
+    "c1_s80": {
+      "id": "c1_s80",
+      "background": "infirmary.webp",
+      "character": "ranposmile.webp",
+      "speaker": "Ranpo",
+      "text": "Tu as eu de la chance. Beaucoup de chance.",
+      "pause": 500,
+      "music": "normal.mp3",
+      "next": "c1_s81"
+    },
+    "c1_s81": {
+      "id": "c1_s81",
+      "background": "infirmary.webp",
+      "character": "atsushi_casual.webp",
+      "speaker": "Atsushi",
+      "text": "Kaito… le livre… Qu'est-ce qui s'est passé ?",
+      "pause": 500,
+      "music": "normal.mp3",
+      "next": "c1_s82"
+    },
+    "c1_s82": {
+      "id": "c1_s82",
+      "background": "infirmary.webp",
+      "character": "dazaicasual2.webp",
+      "speaker": "Dazai",
+      "text": "Kaito a été arrêté. Il ne veut rien dire de plus sur le livre. Et quant à l'artefact…",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "c1_s83"
+    },
+    "c1_s83": {
+      "id": "c1_s83",
+      "background": "infirmary.webp",
+      "character": "kunikidaserious.webp",
+      "speaker": "Kunikida",
+      "text": "La police l'a récupéré. L'affaire ne nous concerne plus, Nakajima. Tu n'as pas à t'inquiéter.",
+      "pause": 600,
+      "music": "normal.mp3",
+      "next": "c1_s84"
+    },
+    "c1_s84": {
+      "id": "c1_s84",
+      "background": "infirmary.webp",
+      "character": "atsushi_casual.webp",
+      "speaker": "Atsushi",
+      "text": "Donc… c'est terminé ?",
+      "pause": 500,
+      "music": "normal.mp3",
+      "next": "c1_s85"
+    },
+    "c1_s85": {
+      "id": "c1_s85",
+      "background": "infirmary.webp",
+      "character": "ranpohand2.webp",
+      "speaker": "Ranpo",
+      "text": "Pour nous, oui. Repose-toi maintenant.",
+      "pause": 500,
+      "music": "normal.mp3",
+      "next": "c1_s86"
+    },
+    "c1_s86": {
+      "id": "c1_s86",
+      "background": "infirmary.webp",
+      "character": null,
+      "speaker": null,
+      "text": "Les membres de l'agence échangent un regard puis sortent un à un.",
+      "pause": 700,
+      "music": "normal.mp3",
+      "next": "c1_s87"
+    },
+    "c1_s87": {
+      "id": "c1_s87",
+      "background": "infirmary.webp",
+      "character": null,
+        "speaker": null,
+      "text": "Maintenant je suis sûr que ces images que j'ai vues n'étaient pas un rêve, car je peux voir les affinités sur certains membres de l'agence.",
+      "pause": 800,
+      "music": "normal.mp3",
+      "next": "c1_s88"
+    },
+    "c1_s88": {
+      "id": "c1_s88",
+      "background": "infirmary.webp",
+      "character": null,
+        "speaker": null,
+      "text": "Je ferme les yeux. Je pourrais leur dire la vérité. Mais quelque chose au fond de moi me retient.",
+      "pause": 800,
+      "music": "normal.mp3",
+      "next": "c1_s89"
+    },
+    "c1_s89": {
+      "id": "c1_s89",
+      "background": "infirmary.webp",
+      "character": null,
+      "speaker": null,
+      "text": "À partir de maintenant, chaque choix que je ferai décidera de ma survie.",
+      "pause": 1000,
+      "music": "normal.mp3",
+      "next": "END"
+    }
   }
 }
